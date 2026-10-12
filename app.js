@@ -378,10 +378,74 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // 8.1 Video Modal & Ambient Sound Controls
+  const openHeroVideoBtn = document.getElementById('openHeroVideoBtn');
+  const videoModal = document.getElementById('videoModal');
+  const videoModalCloseBtn = document.getElementById('videoModalCloseBtn');
+  const videoModalBackdrop = document.getElementById('videoModalBackdrop');
+  const videoModalIframe = document.getElementById('videoModalIframe');
+  const videoModalContactBtn = document.getElementById('videoModalContactBtn');
+  const heroSoundBtn = document.getElementById('heroSoundBtn');
+  const heroVideoFrame = document.getElementById('heroVideoFrame');
+  const soundMutedIcon = document.querySelector('.sound-muted');
+  const soundUnmutedIcon = document.querySelector('.sound-unmuted');
+  const soundLabel = document.getElementById('soundLabel');
+  let isSoundOn = false;
+
+  const VIMEO_FULL_URL = "https://player.vimeo.com/video/1226896975?autoplay=1&muted=0&color=c5a880&title=0&byline=0&portrait=0";
+
+  function openVideoModal() {
+    if (!videoModal || !videoModalIframe) return;
+    videoModalIframe.src = VIMEO_FULL_URL;
+    videoModal.classList.add('active');
+    videoModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeVideoModal() {
+    if (!videoModal || !videoModalIframe) return;
+    videoModalIframe.src = '';
+    videoModal.classList.remove('active');
+    videoModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  if (openHeroVideoBtn) {
+    openHeroVideoBtn.addEventListener('click', openVideoModal);
+  }
+  if (videoModalCloseBtn) {
+    videoModalCloseBtn.addEventListener('click', closeVideoModal);
+  }
+  if (videoModalBackdrop) {
+    videoModalBackdrop.addEventListener('click', closeVideoModal);
+  }
+  if (videoModalContactBtn) {
+    videoModalContactBtn.addEventListener('click', closeVideoModal);
+  }
+
+  // Sound toggle button for ambient background
+  if (heroSoundBtn && heroVideoFrame) {
+    heroSoundBtn.addEventListener('click', () => {
+      isSoundOn = !isSoundOn;
+      if (isSoundOn) {
+        heroVideoFrame.contentWindow.postMessage('{"method":"setVolume", "value":1}', '*');
+        if (soundMutedIcon) soundMutedIcon.style.display = 'none';
+        if (soundUnmutedIcon) soundUnmutedIcon.style.display = 'inline-block';
+        if (soundLabel) soundLabel.textContent = 'השתק';
+      } else {
+        heroVideoFrame.contentWindow.postMessage('{"method":"setVolume", "value":0}', '*');
+        if (soundMutedIcon) soundMutedIcon.style.display = 'inline-block';
+        if (soundUnmutedIcon) soundUnmutedIcon.style.display = 'none';
+        if (soundLabel) soundLabel.textContent = 'שמע';
+      }
+    });
+  }
+
   // Global Escape Key to Close Any Modal
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeProjectModal();
+      closeVideoModal();
       closeModal(privacyModal);
       closeModal(accessibilityModal);
       closeDrawer();

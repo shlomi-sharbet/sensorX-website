@@ -167,12 +167,32 @@
 
   <main id="main-content">
 
-    <!-- 1. Hero Section (Dramatic Dark Luxury Architecture) -->
+    <!-- 1. Hero Section (Cinematic Architectural Video Background) -->
     <section class="hero-section" id="hero">
       <div class="hero-bg-container">
-        <img src="assets/images/hero-bg.jpg" alt="חלל פנטהאוז יוקרתי בעיצוב וביצוע עבודות גמר של חברת sensor X" class="hero-bg-img" fetchpriority="high">
+        <div class="hero-video-wrapper">
+          <iframe 
+            id="heroVideoFrame"
+            class="hero-video-iframe" 
+            src="https://player.vimeo.com/video/1226896975?autoplay=1&muted=1&loop=1&background=1&playsinline=1&autopause=0&quality=1080p" 
+            allow="autoplay; fullscreen; picture-in-picture" 
+            title="sensor X Architectural Film"
+            tabindex="-1"
+            loading="eager">
+          </iframe>
+          <img src="assets/images/hero-bg.jpg" alt="חלל פנטהאוז יוקרתי sensor X" class="hero-bg-img hero-fallback-poster" fetchpriority="high">
+        </div>
         <div class="hero-overlay"></div>
       </div>
+
+      <!-- Ambient Sound Toggle Button -->
+      <button class="hero-sound-btn" id="heroSoundBtn" aria-label="הפעלת שמע לסרטון הרקע" title="צליל סרטון">
+        <span class="sound-icon-box">
+          <svg class="sound-icon sound-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+          <svg class="sound-icon sound-unmuted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+        </span>
+        <span class="sound-label" id="soundLabel">שמע</span>
+      </button>
 
       <div class="container hero-content">
         <div class="hero-badge animate-fade-down">
@@ -191,13 +211,15 @@
         </p>
 
         <div class="hero-cta-group animate-fade-up delay-2">
-          <a href="#contact" class="btn btn--primary btn--lg">
+          <button class="btn btn--primary btn--lg" id="openHeroVideoBtn" aria-label="לצפייה בסרט המלא">
+            <span class="play-btn-circle">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+            </span>
+            <span>לצפייה בסרט המלא</span>
+          </button>
+          <a href="#contact" class="btn btn--glass btn--lg">
             <span>תיאום פגישת ייעוץ והערכת נכס</span>
             <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          </a>
-          <a href="#transformation" class="btn btn--glass btn--lg">
-            <span>צפו במהפך לפני ואחרי</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
           </a>
         </div>
 
@@ -1040,6 +1062,39 @@
         <p>האתר נבנה בהתאם לתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג-2013 ולהנחיות תקן WCAG 2.1 ברמה AA.</p>
         <p>התאמות הנגישות כוללות: תמיכה בניווט מקלדת מלא, ניגודיות צבעים תקינה, היררכיית כותרות סמנטית, תגיות Alt לתמונות ומבנה רספונסיבי מותאם לקוראי מסך.</p>
         <p>במידה ונתקלתם בקושי בנגישות, נשמח אם תפנו לרכז הנגישות בטלפון: 03-9110050.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Player Modal (Full Film) -->
+  <div class="modal" id="videoModal" aria-hidden="true" role="dialog" aria-labelledby="videoModalTitle">
+    <div class="modal-backdrop" id="videoModalBackdrop"></div>
+    <div class="modal-card modal-card--video">
+      <button class="modal-close-btn" id="videoModalCloseBtn" aria-label="סגירת סרטון">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="video-modal-container">
+        <iframe 
+          id="videoModalIframe" 
+          src="" 
+          allow="autoplay; fullscreen; picture-in-picture" 
+          allowfullscreen 
+          title="sensor X Full Architectural Film">
+        </iframe>
+      </div>
+      <div class="video-modal-info">
+        <div class="video-modal-meta">
+          <span class="badge-tag badge-tag--gold">OFFICIAL SHOWREEL</span>
+          <span class="video-duration">01:34 דק׳</span>
+        </div>
+        <h3 class="video-modal-title" id="videoModalTitle">sensor X | מסע אדריכלי, יזמות ועבודות גמר עילית</h3>
+        <p class="video-modal-desc">צפו בסרט המלא המציג את תהליכי התכנון, הפיקוח ההנדסי הקפדני וסטנדרט הביצוע של פרויקטי sensor X ברחבי הארץ.</p>
+        <div class="video-modal-cta">
+          <a href="#contact" class="btn btn--primary" id="videoModalContactBtn">
+            <span>לתיאום פגישת ייעוץ לפרויקט שלכם</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </div>
