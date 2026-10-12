@@ -24,29 +24,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, { passive: true });
 
-  // IntersectionObserver for Active Nav Link
+  // IntersectionObserver for Active Nav Link (only for pages with in-page hash links)
   const observerOptions = {
     root: null,
     rootMargin: '-20% 0px -60% 0px',
     threshold: 0
   };
 
-  const navObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        navLinks.forEach(link => {
-          if (link.getAttribute('href') === `#${id}`) {
-            link.classList.add('active');
-          } else {
-            link.classList.remove('active');
-          }
-        });
-      }
-    });
-  }, observerOptions);
+  const hasHashLinks = Array.from(navLinks).some(link => {
+    const href = link.getAttribute('href');
+    return href && href.startsWith('#') && href.length > 1;
+  });
 
-  sections.forEach(sec => navObserver.observe(sec));
+  if (hasHashLinks) {
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === `#${id}`) {
+              link.classList.add('active');
+            } else if (href && href.startsWith('#')) {
+              link.classList.remove('active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(sec => navObserver.observe(sec));
+  }
 
   // 3. Mobile Drawer Navigation
   const burgerBtn = document.getElementById('burgerBtn');
@@ -539,9 +547,38 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function showFeedback(type, message) {
+    if (!formFeedback) return;
     formFeedback.className = `form-feedback ${type}`;
     formFeedback.textContent = message;
     formFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 10. FAQ Accordion (Contact & Subpages)
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const btn = item.querySelector('.faq-question-btn');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        faqItems.forEach(i => i.classList.remove('active'));
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    }
+  });
+
+  // 11. Interactive ROI Estimator (Transformation Page)
+  const roiPropertyRange = document.getElementById('roiPropertyRange');
+  const roiValueDisplay = document.getElementById('roiValueDisplay');
+  const roiEstGain = document.getElementById('roiEstGain');
+  if (roiPropertyRange && roiValueDisplay && roiEstGain) {
+    roiPropertyRange.addEventListener('input', (e) => {
+      const val = parseInt(e.target.value, 10);
+      roiValueDisplay.textContent = (val).toLocaleString('he-IL') + ' ₪';
+      const gain = Math.round(val * 0.38);
+      roiEstGain.textContent = '+' + (gain).toLocaleString('he-IL') + ' ₪';
+    });
   }
 
 });
