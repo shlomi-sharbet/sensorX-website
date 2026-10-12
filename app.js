@@ -127,6 +127,16 @@ document.addEventListener('DOMContentLoaded', () => {
       isDragging = false;
     });
 
+    // Ensure after image matches container width perfectly across mobile and desktop
+    function syncSliderImageWidth() {
+      const img = afterImageContainer.querySelector('img');
+      if (img && sliderContainer) {
+        img.style.width = sliderContainer.offsetWidth + 'px';
+      }
+    }
+    syncSliderImageWidth();
+    window.addEventListener('resize', syncSliderImageWidth, { passive: true });
+
     // Touch events for mobile/tablet
     sliderContainer.addEventListener('touchstart', (e) => {
       isDragging = true;

@@ -2993,3 +2993,145 @@ ul {
   gap: 1rem;
 }
 
+/* ==========================================================================
+   Mobile-First Refinements & Touch Optimization (iOS / Android)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* Prevent iOS Safari automatic zoom on inputs */
+  .form-input,
+  .form-select,
+  .form-textarea {
+    font-size: 16px !important;
+  }
+
+  /* Extra clearance at footer bottom for mobile sticky action bar */
+  .site-footer {
+    padding-bottom: 6rem !important;
+  }
+
+  /* Projects Filter Tabs - Smooth horizontal swipe */
+  .projects-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .filter-tabs {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+  }
+
+  .filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Subpage Hero mobile scaling */
+  .subpage-hero {
+    padding-block: 3.25rem 2.5rem;
+  }
+
+  .subpage-title {
+    font-size: clamp(1.85rem, 6vw, 2.35rem);
+  }
+
+  .subpage-lead {
+    font-size: 1rem;
+  }
+
+  /* Hero Section mobile adjustments */
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+
+  .hero-stats-grid {
+    padding: 1.25rem 1rem;
+    gap: 1.25rem 0.75rem;
+  }
+
+  /* Service Detail Cards mobile padding */
+  .service-detail-info {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .service-detail-media {
+    min-height: 240px;
+  }
+
+  .service-detail-card {
+    margin-bottom: 2rem;
+  }
+
+  /* Modals mobile sizing */
+  .modal {
+    padding: 0.75rem;
+  }
+
+  .modal-card {
+    max-height: 92vh;
+  }
+
+  .modal-card--text {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .modal-body {
+    padding: 1.25rem;
+  }
+
+  .modal-specs-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Announcement bar on tiny screens */
+  .announcement-tag {
+    display: none;
+  }
+
+  .announcement-text {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .announcement-wa {
+    display: none; /* Already prominently in sticky action bar */
+  }
+
+  .top-announcement__inner {
+    justify-content: center;
+  }
+
+  .comparison-badge {
+    font-size: 0.725rem;
+    padding: 0.35rem 0.75rem;
+    bottom: 0.85rem;
+  }
+
+  .comparison-badge--before {
+    right: 0.85rem;
+  }
+
+  .comparison-badge--after {
+    left: 0.85rem;
+  }
+}
+
+
