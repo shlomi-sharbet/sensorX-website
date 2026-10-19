@@ -35,19 +35,95 @@
   
   <link rel="stylesheet" href="style.css">
 
-  <!-- JSON-LD Schema -->
+  <!-- Google Analytics 4 (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- JSON-LD Schema (Multi-Entity Knowledge Graph & Breadcrumbs) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "HomeAndConstructionBusiness",
+        "@id": "https://sensorix.co.il/#organization",
+        "name": "Sensorix",
+        "legalName": "סנסוריקס יזמות ביצוע וניהול פרויקטים בע\"מ",
+        "url": "https://sensorix.co.il",
+        "logo": "https://sensorix.co.il/assets/images/logo.png",
+        "image": "https://sensorix.co.il/assets/images/after.jpg",
+        "description": "סנסוריקס (Sensorix) — חברה מובילה בעבודות גמר פרימיום, השבחת נכסים מסחריים מניבים ויזמות נדל\"ן בישראל עם למעלה משני עשורים של ניסיון הנדסי ומעטפת Turnkey שלמה.",
+        "telephone": "+972-50-0000000",
+        "email": "contact@sensorix.co.il",
+        "priceRange": "₪₪₪₪",
+        "knowsAbout": [
+          "עבודות גמר מסחריות",
+          "השבחת נכסים מניבים",
+          "ניהול פרויקטים הנדסיים Turnkey",
+          "עיצוב והקמת משרדים",
+          "רישוי בנייה והיתרים",
+          "יזמות נדל\"ן וביצוע"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "תל אביב",
+          "addressRegion": "מרכז",
+          "addressCountry": "IL"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 32.0853,
+          "longitude": 34.7818
+        },
+        "areaServed": [
+          { "@type": "AdministrativeArea", "name": "תל אביב וגוש דן" },
+          { "@type": "AdministrativeArea", "name": "מחוז המרכז" },
+          { "@type": "Country", "name": "ישראל" }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://sensorix.co.il/#website",
+        "url": "https://sensorix.co.il",
+        "name": "Sensorix",
+        "publisher": { "@id": "https://sensorix.co.il/#organization" },
+        "inLanguage": "he-IL"
+      },
+      {
         "@type": "AboutPage",
         "@id": "https://sensorix.co.il/about.html#webpage",
         "url": "https://sensorix.co.il/about.html",
-        "name": "אודות Sensorix | קצת עלינו וחזון ואסטרטגיה",
+        "name": "אודות Sensorix | למעלה משני עשורים של עשייה, חזון ואסטרטגיה",
+        "description": "הכירו את Sensorix — חברה מובילה בעבודות גמר פרימיום, השבחת נכסים מסחריים ויזמות נדל״ן. היסטוריה, ערכים, צוות הנדסי מוביל וחזון קדימה.",
         "isPartOf": { "@id": "https://sensorix.co.il/#website" },
         "about": { "@id": "https://sensorix.co.il/#organization" },
+        "breadcrumb": { "@id": "https://sensorix.co.il/about.html#breadcrumb" },
+        "datePublished": "2026-01-15T08:00:00+02:00",
+        "dateModified": "2026-10-20T00:00:00+02:00",
         "inLanguage": "he-IL"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://sensorix.co.il/about.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "דף הבית",
+            "item": "https://sensorix.co.il/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "אודות החברה",
+            "item": "https://sensorix.co.il/about.html"
+          }
+        ]
       }
     ]
   }
@@ -131,6 +207,13 @@
     <!-- ========== PAGE HERO ========== -->
     <section class="page-hero" aria-labelledby="about-page-title">
       <div class="container">
+        <!-- Breadcrumb Navigation (SEO & Accessibility) -->
+        <nav class="page-breadcrumb" aria-label="נתיב ניווט (Breadcrumbs)">
+          <a href="index.html">דף הבית</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">אודות החברה</span>
+        </nav>
+
         <span class="hero-badge" data-reveal>הכירו את Sensorix</span>
         <h1 class="page-title" id="about-page-title" data-reveal data-reveal-delay="1">
           אודות Sensorix
@@ -138,6 +221,12 @@
         <p class="page-subtitle" data-reveal data-reveal-delay="2">
           חיבור מדויק בין מומחיות הנדסית רבת שנים, שקיפות בלתי מתפשרת ומחויבות אישית להצלחת הפרויקט שלכם.
         </p>
+
+        <!-- E-E-A-T Provenance & Freshness Badge (GEO / AIO) -->
+        <div class="provenance-badge" data-reveal data-reveal-delay="3">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>נבדק ואושר ע"י הנהלת Sensorix | עודכן לאחרונה: 20 באוקטובר 2026</span>
+        </div>
       </div>
     </section>
 
@@ -145,7 +234,7 @@
     <section class="about-tabs-section" aria-label="מידע מפורט על החברה">
       <div class="container">
         <!-- Tab navigation -->
-        <div class="tabs-nav" role="tablist" aria-label="חלקי הדף">
+        <div class="about-tabs-nav tabs-nav" role="tablist" aria-label="חלקי הדף">
           <button
             class="tab-btn active"
             role="tab"
@@ -153,6 +242,7 @@
             aria-controls="pane-about-us"
             id="tab-about-us"
             data-tab="about-us"
+            tabindex="0"
           >
             קצת עלינו
           </button>
@@ -163,13 +253,14 @@
             aria-controls="pane-vision"
             id="tab-vision"
             data-tab="vision"
+            tabindex="-1"
           >
             חזון ואסטרטגיה
           </button>
         </div>
 
         <!-- TAB 1: קצת עלינו (תוכן מדויק מקובץ הוורד המקורי) -->
-        <div class="tab-pane active" id="pane-about-us" role="tabpanel" aria-labelledby="tab-about-us">
+        <div class="tab-pane active" id="pane-about-us" role="tabpanel" aria-labelledby="tab-about-us" tabindex="0">
           <div class="about-us-grid">
             <div class="about-us-text">
               <div>
@@ -224,6 +315,7 @@
                 src="assets/images/before.jpg"
                 alt="לפני — נכס מסחרי בתחילת תהליך השיפוץ וההשבחה"
                 loading="lazy"
+                decoding="async"
                 width="600"
                 height="450"
               >
@@ -231,6 +323,7 @@
                 src="assets/images/after.jpg"
                 alt="אחרי — נכס מסחרי מרהיב בגימור מושלם לאחר עבודות הגמר"
                 loading="lazy"
+                decoding="async"
                 width="600"
                 height="450"
               >
@@ -239,7 +332,7 @@
         </div>
 
         <!-- TAB 2: חזון ואסטרטגיה (תוכן מדויק מקובץ הוורד המקורי) -->
-        <div class="tab-pane" id="pane-vision" role="tabpanel" aria-labelledby="tab-vision">
+        <div class="tab-pane" id="pane-vision" role="tabpanel" aria-labelledby="tab-vision" tabindex="-1">
           <div class="vision-section">
             <div>
               <p class="section-label" data-reveal>החזון שלנו</p>

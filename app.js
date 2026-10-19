@@ -68,19 +68,25 @@
     });
   }
 
-  /* ── About page tabs ── */
-  const tabBtns = document.querySelectorAll('.tab-btn[data-tab]');
+  /* ── About page tabs (WAI-ARIA Pattern & Keyboard Ergonomics) ── */
+  const tabBtns = Array.from(document.querySelectorAll('.tab-btn[data-tab]'));
   const tabPanes = document.querySelectorAll('.tab-pane');
 
-  function activateTab(tabId) {
+  function activateTab(tabId, focusBtn = false) {
+    let activeBtnElement = null;
     tabBtns.forEach((btn) => {
       const active = btn.dataset.tab === tabId;
       btn.classList.toggle('active', active);
       btn.setAttribute('aria-selected', String(active));
+      btn.setAttribute('tabindex', active ? '0' : '-1');
+      if (active) activeBtnElement = btn;
     });
+
     tabPanes.forEach((pane) => {
       const active = pane.id === `pane-${tabId}`;
       pane.classList.toggle('active', active);
+      pane.setAttribute('tabindex', active ? '0' : '-1');
+
       // Trigger reveal animations in newly shown tab
       if (active) {
         pane.querySelectorAll('[data-reveal]').forEach((el) => {
@@ -91,10 +97,36 @@
         });
       }
     });
+
+    if (focusBtn && activeBtnElement) {
+      activeBtnElement.focus();
+    }
   }
 
-  tabBtns.forEach((btn) => {
+  tabBtns.forEach((btn, idx) => {
     btn.addEventListener('click', () => activateTab(btn.dataset.tab));
+
+    // Keyboard navigation (WAI-ARIA tabs pattern: ArrowLeft/ArrowRight/Home/End)
+    btn.addEventListener('keydown', (e) => {
+      let targetIdx = null;
+      if (e.key === 'ArrowLeft') {
+        // In RTL, left arrow moves to next tab
+        targetIdx = (idx + 1) % tabBtns.length;
+      } else if (e.key === 'ArrowRight') {
+        // In RTL, right arrow moves to previous tab
+        targetIdx = (idx - 1 + tabBtns.length) % tabBtns.length;
+      } else if (e.key === 'Home') {
+        targetIdx = 0;
+      } else if (e.key === 'End') {
+        targetIdx = tabBtns.length - 1;
+      }
+
+      if (targetIdx !== null) {
+        e.preventDefault();
+        const targetBtn = tabBtns[targetIdx];
+        activateTab(targetBtn.dataset.tab, true);
+      }
+    });
   });
 
   // Read tab from URL query param

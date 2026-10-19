@@ -1033,7 +1033,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: var(--clr-bg);
 }
 
-.about-tabs-nav {
+.about-tabs-nav,
+.tabs-nav {
   display: flex;
   gap: 0.5rem;
   border-block-end: 1px solid var(--clr-border);
@@ -1054,9 +1055,36 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .tab-btn.active,
 .tab-btn:hover { color: var(--clr-text-primary); }
 .tab-btn.active { border-block-end-color: var(--clr-gold); color: var(--clr-gold); }
+.tab-btn:focus-visible {
+  outline: 2px solid var(--clr-gold);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
 
 .tab-pane { display: none; }
 .tab-pane.active { display: block; }
+.tab-pane:focus-visible {
+  outline: 2px solid var(--clr-gold);
+  outline-offset: 4px;
+}
+
+/* Provenance & E-E-A-T Freshness Badge */
+.provenance-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  background: hsla(0, 0%, 14%, 0.7);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  color: var(--clr-text-secondary);
+  margin-top: 1.25rem;
+}
+.provenance-badge svg {
+  color: var(--clr-gold);
+  flex-shrink: 0;
+}
 
 /* About us content */
 .about-us-grid {
