@@ -5,5 +5,10 @@
   "assets": {
     "directory": "."
   },
+  "send_email": [
+    {
+      "name": "EMAIL"
+    }
+  ],
   "previews": {}
 }

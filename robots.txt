@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Explicitly welcome Search & Retrieval AI Crawlers for citations
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://sensorix.co.il/sitemap.xml
