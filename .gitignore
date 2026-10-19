@@ -21,5 +21,7 @@ ehthumbs_vista.db
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-
+# Content drafts & scratch
+תוכן/
+*.docx
+.dev.vars
