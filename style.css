@@ -9,20 +9,20 @@
 /* ---------- Design Tokens ---------- */
 :root {
   /* Colors */
-  --clr-bg:          hsl(220, 14%, 6%);
-  --clr-bg-2:        hsl(220, 12%, 9%);
-  --clr-bg-card:     hsl(220, 14%, 11%);
-  --clr-surface:     hsl(220, 12%, 14%);
-  --clr-border:      hsl(220, 10%, 20%);
-  --clr-border-light:hsl(220, 10%, 28%);
+  --clr-bg:          hsl(0, 0%, 5%);
+  --clr-bg-2:        hsl(0, 0%, 8%);
+  --clr-bg-card:     hsl(0, 0%, 11%);
+  --clr-surface:     hsl(0, 0%, 15%);
+  --clr-border:      hsl(0, 0%, 18%);
+  --clr-border-light:hsl(0, 0%, 28%);
 
-  --clr-gold:        hsl(38, 62%, 52%);
-  --clr-gold-light:  hsl(40, 72%, 66%);
-  --clr-gold-dark:   hsl(35, 55%, 38%);
+  --clr-gold:        hsl(22, 95%, 60%);
+  --clr-gold-light:  hsl(25, 100%, 72%);
+  --clr-gold-dark:   hsl(20, 85%, 46%);
 
-  --clr-text-primary:   hsl(40, 20%, 92%);
-  --clr-text-secondary: hsl(220, 8%, 65%);
-  --clr-text-muted:     hsl(220, 8%, 44%);
+  --clr-text-primary:   hsl(0, 0%, 93%);
+  --clr-text-secondary: hsl(0, 0%, 62%);
+  --clr-text-muted:     hsl(0, 0%, 42%);
   --clr-white:          #ffffff;
 
   /* Typography */
@@ -124,12 +124,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .btn-primary {
   background: var(--clr-gold);
-  color: var(--clr-bg);
+  color: #fff;
 }
 .btn-primary:hover {
   background: var(--clr-gold-light);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px hsla(38, 62%, 52%, 0.35);
+  box-shadow: 0 8px 24px hsla(22, 95%, 60%, 0.4);
 }
 
 .btn-outline {
@@ -508,8 +508,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .service-icon {
   width: 52px;
   height: 52px;
-  background: hsla(38, 62%, 52%, 0.1);
-  border: 1px solid hsla(38, 62%, 52%, 0.2);
+  background: hsla(22, 95%, 60%, 0.1);
+  border: 1px solid hsla(22, 95%, 60%, 0.2);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -520,7 +520,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: var(--transition);
 }
 .service-card:hover .service-icon {
-  background: hsla(38, 62%, 52%, 0.2);
+  background: hsla(22, 95%, 60%, 0.22);
 }
 
 .service-title {
@@ -578,7 +578,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   inset-block-end: -1.5rem;
   inset-inline-start: -1.5rem;
   background: var(--clr-gold);
-  color: var(--clr-bg);
+  color: #fff;
   padding: 1.5rem 2rem;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
@@ -662,7 +662,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   inset-inline-end: -20%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, hsla(38,62%,52%,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, hsla(22,95%,60%,0.06) 0%, transparent 70%);
   transform: translateY(-50%);
   pointer-events: none;
 }
@@ -703,13 +703,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex;
   align-items: center;
   justify-content: center;
-  background: hsla(38, 62%, 52%, 0.08);
+  background: hsla(22, 95%, 60%, 0.08);
   border-radius: 50%;
-  border: 1px solid hsla(38, 62%, 52%, 0.2);
+  border: 1px solid hsla(22, 95%, 60%, 0.2);
   transition: var(--transition);
 }
 .why-card:hover .why-icon {
-  background: hsla(38, 62%, 52%, 0.18);
+  background: hsla(22, 95%, 60%, 0.18);
 }
 
 .why-card h3 {
@@ -728,7 +728,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    ============================================================ */
 .cta-banner {
   padding-block: var(--section-py);
-  background: linear-gradient(135deg, hsl(35, 55%, 38%) 0%, hsl(38, 62%, 52%) 50%, hsl(40, 65%, 60%) 100%);
+  background: linear-gradient(135deg, hsl(18, 90%, 38%) 0%, hsl(22, 95%, 55%) 50%, hsl(26, 100%, 65%) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -926,7 +926,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 80% at 80% 50%, hsla(38,62%,52%,0.05) 0%, transparent 70%);
+    radial-gradient(ellipse 60% 80% at 80% 50%, hsla(22,95%,60%,0.06) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -1061,8 +1061,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--clr-gold);
   line-height: 1.5;
   padding: 2rem 2.5rem;
-  background: hsla(38, 62%, 52%, 0.06);
-  border: 1px solid hsla(38, 62%, 52%, 0.2);
+  background: hsla(22, 95%, 60%, 0.07);
+  border: 1px solid hsla(22, 95%, 60%, 0.2);
   border-radius: var(--radius-md);
   border-inline-start: 4px solid var(--clr-gold);
 }
