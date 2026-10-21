@@ -5,9 +5,10 @@
   "description": "SENSORIX Corporate Showcase Website",
   "type": "module",
   "scripts": {
-    "deploy": "wrangler deploy"
+    "deploy": "wrangler deploy",
+    "preview": "wrangler preview"
   },
   "devDependencies": {
-    "wrangler": "^3.80.0"
+    "wrangler": "^4.151.0"
   }
 }
