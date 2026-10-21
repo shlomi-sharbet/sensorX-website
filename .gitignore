@@ -25,3 +25,4 @@ yarn-error.log*
 תוכן/
 *.docx
 .dev.vars
+node_modules/

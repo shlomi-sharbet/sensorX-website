@@ -1,0 +1,16 @@
+# Cloudflare Static Assets ignore list
+_worker.js
+_routes.json
+functions/
+node_modules/
+package.json
+package-lock.json
+bun.lock
+bun.lockb
+wrangler.jsonc
+wrangler.json
+.git/
+.gitignore
+.dev.vars
+תוכן/
+*.docx
