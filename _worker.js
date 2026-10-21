@@ -6,7 +6,7 @@ export default {
     const url = new URL(request.url);
 
     // Route API contact requests to our serverless handler
-    if (url.pathname === '/api/contact' || url.pathname === '/api/contact/') {
+    if (url.pathname.startsWith('/api/contact')) {
       return handleContact(request, env);
     }
 
