@@ -145,34 +145,68 @@ async function handleContact(request, env) {
       </div>
     `;
 
+    // 4. Construct Email Message & Send via Cloudflare Native Binding
+    const recipient = env.BUSINESS_ALERT_EMAIL || 'shlomi.sharbet@gmail.com';
+    const sender = env.FROM_EMAIL || 'leads@sensorix.co.il';
+    const subject = `ליד חדש מאתר Sensorix: ${safeName} (${safeService})`;
+
+    let emailSent = false;
+    let emailStatusMessage = '';
+
     // Send via Cloudflare Email Routing binding if configured
     if (env.EMAIL && typeof env.EMAIL.send === 'function') {
       try {
-        const rawMime = [
-          `From: "Sensorix Website" <${sender}>`,
-          `To: <${recipient}>`,
-          `Reply-To: <${safeEmail}>`,
-          `Subject: =?utf-8?B?${btoa(unescape(encodeURIComponent(subject)))}?=`,
-          `MIME-Version: 1.0`,
-          `Content-Type: text/html; charset=utf-8`,
-          ``,
-          htmlBody
-        ].join('\r\n');
+        // Attempt 1: Modern Cloudflare Email Service format
+        await env.EMAIL.send({
+          to: [{ email: recipient, name: "Sensorix Management" }],
+          from: { email: sender, name: "אתר סנסוריקס" },
+          subject: subject,
+          text: `התקבלה פנייה חדשה מאתר Sensorix:\nשם הפונה: ${safeName}\nדוא"ל: ${safeEmail}\nטלפון: ${safePhone || 'לא צוין'}\nתחום: ${safeService}\nהודעה: ${safeMessage || 'ללא תוכן נוסף'}`,
+          html: htmlBody
+        });
+        emailSent = true;
+        emailStatusMessage = 'נשלח בהצלחה דרך Cloudflare Email Service';
+        console.log('Email sent successfully via Cloudflare Email Service to', recipient);
+      } catch (modernErr) {
+        console.warn('Modern send_email failed, attempting fallback to MIME EmailMessage:', modernErr.message);
+        try {
+          // Attempt 2: Fallback to raw MIME EmailMessage
+          const rawMime = [
+            `From: "אתר סנסוריקס" <${sender}>`,
+            `To: <${recipient}>`,
+            `Reply-To: <${safeEmail}>`,
+            `Subject: =?utf-8?B?${btoa(unescape(encodeURIComponent(subject)))}?=`,
+            `MIME-Version: 1.0`,
+            `Content-Type: text/html; charset=utf-8`,
+            ``,
+            htmlBody
+          ].join('\r\n');
 
-        const { EmailMessage } = await import("cloudflare:email");
-        const emailMsg = new EmailMessage(sender, recipient, rawMime);
-        await env.EMAIL.send(emailMsg);
-        console.log('Email sent successfully to', recipient);
-      } catch (emailErr) {
-        console.error('Email dispatch error via Cloudflare Email Routing:', emailErr);
+          const { EmailMessage } = await import("cloudflare:email");
+          const emailMsg = new EmailMessage(sender, recipient, rawMime);
+          await env.EMAIL.send(emailMsg);
+          emailSent = true;
+          emailStatusMessage = 'נשלח בהצלחה דרך MIME EmailMessage';
+          console.log('Email sent successfully via MIME EmailMessage to', recipient);
+        } catch (mimeErr) {
+          console.error('All Cloudflare Email Routing attempts failed:', mimeErr);
+          emailStatusMessage = `שגיאה בשליחת מייל מ-Cloudflare: ${mimeErr.message || modernErr.message}`;
+        }
       }
     } else {
-      console.log('EMAIL binding not present in Cloudflare Worker. Lead recorded:', { safeName, safeEmail, safePhone, safeService });
+      emailStatusMessage = 'חיבור env.EMAIL אינו מוגדר או פעיל ב-Cloudflare Worker זה';
+      console.log(emailStatusMessage, { safeName, safeEmail, safePhone, safeService });
     }
 
     return new Response(JSON.stringify({
       success: true,
-      message: 'פנייתך התקבלה בהצלחה! צוות Sensorix יחזור אליך בהקדם.'
+      message: 'פנייתך התקבלה בהצלחה! צוות Sensorix יחזור אליך בהקדם.',
+      emailDelivery: {
+        sent: emailSent,
+        details: emailStatusMessage,
+        recipient: recipient,
+        sender: sender
+      }
     }), {
       status: 200,
       headers: jsonHeaders
