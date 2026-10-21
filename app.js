@@ -309,6 +309,12 @@
       }
 
       try {
+        if (window.location.protocol === 'file:') {
+          throw new Error(document.documentElement.lang === 'en'
+            ? 'Form submission is disabled when opening HTML directly as a local file (file:///). Please deploy and test on your live Cloudflare Pages URL.'
+            : 'שליחת טפסים ושרת ה-API אינם פעילים בפתיחת קובץ מקומי (file:///). יש לבדוק את הטופס בכתובת החיה ב-Cloudflare Pages.');
+        }
+
         const payload = {
           name,
           email,
@@ -327,7 +333,13 @@
           body: JSON.stringify(payload)
         });
 
-        const result = await response.json();
+        let result = {};
+        try {
+          result = await response.json();
+        } catch (_) {
+          const rawText = await response.text().catch(() => '');
+          result = { error: rawText || `שגיאת שרת (${response.status})` };
+        }
 
         if (response.ok && result.success) {
           if (formStatus) {
@@ -352,9 +364,9 @@
         console.error('Contact form submission error:', err);
         if (formStatus) {
           formStatus.classList.add('is-error');
-          formStatus.textContent = document.documentElement.lang === 'en'
+          formStatus.textContent = err.message || (document.documentElement.lang === 'en'
             ? translations.en.form_error
-            : translations.he.form_error;
+            : translations.he.form_error);
         }
       } finally {
         if (submitBtn) {
