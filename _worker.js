@@ -148,7 +148,7 @@ async function handleContact(request, env) {
     let emailSent = false;
     let emailStatusMessage = '';
 
-    // Send via Cloudflare Email Routing binding if configured
+    // Send via Cloudflare Native Email Service / Email Routing
     if (env.EMAIL && typeof env.EMAIL.send === 'function') {
       try {
         // Attempt 1: Modern Cloudflare Email Service format
