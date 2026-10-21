@@ -145,11 +145,6 @@ async function handleContact(request, env) {
       </div>
     `;
 
-    // 4. Construct Email Message & Send via Cloudflare Native Binding
-    const recipient = env.BUSINESS_ALERT_EMAIL || 'shlomi.sharbet@gmail.com';
-    const sender = env.FROM_EMAIL || 'leads@sensorix.co.il';
-    const subject = `ליד חדש מאתר Sensorix: ${safeName} (${safeService})`;
-
     let emailSent = false;
     let emailStatusMessage = '';
 
