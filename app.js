@@ -161,7 +161,6 @@
       btn_call: 'חייג עכשיו',
       menu_title: 'תפריט ראשי',
       close_menu: 'סגור תפריט',
-      preview_hint: 'רחף מעל האפשרויות לצפייה בתמונה המייצגת',
       footer_all_rights: 'כל הזכויות שמורות לחברת Sensorix יזמות ונדל"ן בע"מ © 2026',
       footer_accessibility: 'הצהרת נגישות',
       footer_privacy: 'מדיניות פרטיות',
@@ -171,8 +170,8 @@
       form_phone: 'מספר טלפון *',
       form_service: 'תחום השירות המבוקש',
       form_msg: 'תוכן הפנייה *',
-      form_submit: 'שליחת פנייה דיסקרטית',
-      form_sending: 'שולח נתונים מאובטחים...',
+      form_submit: 'שליחת פנייה',
+      form_sending: 'שולח פנייה...',
       form_success: 'תודה רבה! פנייתך התקבלה בהצלחה. נציג בכיר מטעמנו ייצור עמך קשר בהקדם.',
       form_error: 'חלה שגיאה בשליחת הטופס. אנא ודא שכל השדות מלאים או פנה טלפונית.'
     },
@@ -189,7 +188,6 @@
       btn_call: 'Call Now',
       menu_title: 'Main Menu',
       close_menu: 'Close Menu',
-      preview_hint: 'Hover over menu options to preview images',
       footer_all_rights: 'All rights reserved to Sensorix Real Estate & Development Ltd © 2026',
       footer_accessibility: 'Accessibility Statement',
       footer_privacy: 'Privacy Policy',
@@ -199,8 +197,8 @@
       form_phone: 'Phone Number *',
       form_service: 'Requested Field of Expertise',
       form_msg: 'Your Message *',
-      form_submit: 'Submit Confidential Inquiry',
-      form_sending: 'Transmitting encrypted inquiry...',
+      form_submit: 'Send Inquiry',
+      form_sending: 'Transmitting inquiry...',
       form_success: 'Thank you! Your inquiry has been received. Our senior executive will reach out shortly.',
       form_error: 'An error occurred during submission. Please verify all fields or contact us directly.'
     }
