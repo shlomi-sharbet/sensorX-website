@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ביצוע וניהול פרויקטים | SENSORIX – עבודות גמר ועבודות תקשורת</title>
+  <meta name="description" content="סנסוריקס ביצוע וניהול פרויקטים: מומחיות, הנדסה ואיכות בביצוע עבודות גמר למגזר העסקי והמסחרי, ותשתיות תקשורת ורשתות מתקדמות תחת יועץ תקשורת מוסמך.">
+  <meta name="theme-color" content="#0A0B0D">
+  
+  <link rel="icon" type="image/png" href="assets/images/new-logo-main2.png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Cloudflare Turnstile -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body class="inner-page">
+  <a href="#main-content" class="skip-link">דלג לתוכן המרכזי</a>
+
+  <!-- ============================================================
+       TOP FLOATING HEADER (ALL PAGES)
+       ============================================================ -->
+  <header class="site-header" role="banner">
+    <div class="header-container">
+      
+      <!-- Right: Floating Hamburger Button -->
+      <button class="burger-trigger" id="burgerBtn" aria-label="פתח תפריט ניווט" aria-expanded="false" aria-controls="menuOverlay">
+        <div class="burger-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <span class="burger-label" data-i18n="menu_title">תפריט</span>
+      </button>
+
+      <!-- Center: Logo with Translucent White Glass Badge -->
+      <a href="index.html" class="logo-badge" aria-label="סנסוריקס - חזרה לדף הבית">
+        <img src="assets/images/new-logo-main2.png" alt="SENSORIX Logo" width="160" height="34">
+      </a>
+
+      <!-- Left: Language Switcher & Quick Contact -->
+      <div class="header-actions">
+        <div class="lang-switcher-pill" role="group" aria-label="בורר שפה">
+          <button class="lang-btn active" data-lang="he" aria-pressed="true">עב</button>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a href="#contact" class="header-call-btn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span data-i18n="btn_contact">צור קשר</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ============================================================
+       SPLIT-SCREEN OVERLAY HAMBURGER MENU (g-dlevy.co.il Style)
+       ============================================================ -->
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="menu-close-btn" id="menuCloseBtn" aria-label="סגור תפריט">
+      <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+      <span data-i18n="close_menu">סגור</span>
+    </button>
+
+    <div class="menu-right-panel">
+      <nav class="menu-nav-list" aria-label="תפריט אתר ראשי">
+        <div class="menu-item-row" data-preview-target="home">
+          <a href="index.html" class="menu-main-link" data-preview-target="home">
+            <span class="item-text" data-i18n="nav_home">דף הבית</span>
+            <span class="item-num">01</span>
+          </a>
+        </div>
+
+        <div class="menu-item-row" data-preview-target="about">
+          <a href="about.html" class="menu-main-link" data-preview-target="about">
+            <span class="item-text" data-i18n="nav_about">אודות</span>
+            <div style="display:flex; align-items:center;">
+              <span class="item-num">02</span>
+              <svg class="menu-chevron" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+          </a>
+          <div class="menu-sub-list">
+            <a href="about.html#story" class="sub-link" data-preview-target="about" data-i18n="nav_about_story">קצת עלינו</a>
+            <a href="about.html#vision" class="sub-link" data-preview-target="about" data-i18n="nav_about_vision">חזון ואסטרטגיה</a>
+          </div>
+        </div>
+
+        <div class="menu-item-row is-active" data-preview-target="finishes">
+          <a href="projects.html" class="menu-main-link" data-preview-target="finishes">
+            <span class="item-text" data-i18n="nav_projects">ביצוע וניהול פרויקטים</span>
+            <div style="display:flex; align-items:center;">
+              <span class="item-num">03</span>
+              <svg class="menu-chevron" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+          </a>
+          <div class="menu-sub-list">
+            <a href="projects.html#telecom" class="sub-link" data-preview-target="telecom" data-i18n="nav_telecom">עבודות תקשורת</a>
+            <a href="projects.html#finishes" class="sub-link" data-preview-target="finishes" data-i18n="nav_finishes">עבודות גמר</a>
+          </div>
+        </div>
+
+        <div class="menu-item-row" data-preview-target="yield">
+          <a href="yield.html" class="menu-main-link" data-preview-target="yield">
+            <span class="item-text" data-i18n="nav_yield">השבחת נכסים ומיקסום תשואות</span>
+            <span class="item-num">04</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="menu-panel-footer">
+        <div class="menu-contact-line">
+          <strong>טלפון ישיר:</strong>
+          <a href="tel:0500000000" dir="ltr">050-0000000</a>
+        </div>
+        <div class="menu-contact-line">
+          <strong>דוא״ל:</strong>
+          <a href="mailto:office@sensorix.co.il">office@sensorix.co.il</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-left-viewport">
+      <div class="preview-stage" id="previewStage">
+        
+        <div class="preview-slide" data-slide="home">
+          <img src="assets/images/about-preview.jpg" alt="דף הבית" loading="lazy">
+          <div class="preview-overlay-info">
+            <span class="preview-badge">SENSORIX</span>
+            <div class="preview-title">דף הבית</div>
+            <div class="preview-desc">עבודות גמר יוקרתיות, השבחת נכסים מסחריים ותשתיות תקשורת.</div>
+          </div>
+        </div>
+
+        <div class="preview-slide" data-slide="about">
+          <img src="assets/images/about-preview.jpg" alt="אודות" loading="lazy">
+          <div class="preview-overlay-info">
+            <span class="preview-badge">OUR STORY</span>
+            <div class="preview-title">אודות סנסוריקס יזמות ונדל"ן</div>
+            <div class="preview-desc">מעל שני עשורים של ניסיון עשיר, יחס אישי ומעטפת הנדסית שלמה.</div>
+          </div>
+        </div>
+
+        <div class="preview-slide is-active" data-slide="finishes">
+          <img src="assets/images/finishing-preview.jpg" alt="עבודות גמר" loading="lazy">
+          <div class="preview-overlay-info">
+            <span class="preview-badge">PREMIUM FINISHES</span>
+            <div class="preview-title">עבודות גמר למגזר העסקי והמסחרי</div>
+            <div class="preview-desc">תרגום תוכניות אדריכליות ומפרטים מורכבים לתוצאות מושלמות.</div>
+          </div>
+        </div>
+
+        <div class="preview-slide" data-slide="telecom">
+          <img src="assets/images/telecom-preview.jpg" alt="עבודות תקשורת" loading="lazy">
+          <div class="preview-overlay-info">
+            <span class="preview-badge">TELECOM & NETWORKS</span>
+            <div class="preview-title">עבודות תקשורת ומערכות מתח נמוך</div>
+            <div class="preview-desc">30 שנות ניסיון בהובלת יועץ תקשורת מוסמך.</div>
+          </div>
+        </div>
+
+        <div class="preview-slide" data-slide="yield">
+          <img src="assets/images/yield-preview.jpg" alt="השבחת נכסים ומיקסום תשואות" loading="lazy">
+          <div class="preview-overlay-info">
+            <span class="preview-badge">ASSET ENHANCEMENT</span>
+            <div class="preview-title">השבחת נכסים ומיקסום תשואות</div>
+            <div class="preview-desc">Adaptive Reuse והפיכת נכסים למרכזים מודרניים שוקקים ורווחיים.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="preview-default-note">
+        <span class="dot"></span>
+        <span data-i18n="preview_hint">רחף מעל האפשרויות לצפייה בתמונה המייצגת</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PAGE HERO (PROJECTS)
+       ============================================================ -->
+  <main id="main-content">
+    <section class="page-hero" aria-label="ביצוע וניהול פרויקטים">
+      <img src="assets/images/finishing-preview.jpg" alt="ביצוע וניהול פרויקטים" class="page-hero-bg">
+      <div class="page-hero-gradient" aria-hidden="true"></div>
+      <div class="container page-hero-content">
+        <span class="page-hero-category">PROJECT MANAGEMENT & EXECUTION</span>
+        <h1 class="page-hero-title" data-lang-he="ביצוע וניהול פרויקטים" data-lang-en="Project Management & Execution">ביצוע וניהול פרויקטים</h1>
+        <p class="page-hero-subtitle" data-lang-he="סנכרון מדויק בין מומחיות הנדסית, עבודות גמר יוקרתיות ותשתיות תקשורת מתקדמות." data-lang-en="Meticulous synchronization between engineering mastery, luxury finishing works, and high-performance telecom infrastructure.">
+          סנכרון מדויק בין מומחיות הנדסית, עבודות גמר יוקרתיות ותשתיות תקשורת מתקדמות.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       1. עבודות גמר - USER'S EXACT TEXT
+       ============================================================ -->
+    <section class="section-py section-dark" id="finishes" aria-label="עבודות גמר">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="eyebrow">PREMIUM FINISHES</span>
+          <h2 class="section-title" data-lang-he="מומחיות, הנדסה ואיכות בביצוע עבודות גמר למגזר העסקי והמסחרי" data-lang-en="Expertise, Engineering & Quality in Commercial Finishes">
+            מומחיות, הנדסה ואיכות בביצוע עבודות גמר למגזר העסקי והמסחרי
+          </h2>
+        </div>
+
+        <div class="story-split" style="margin-bottom: 4rem;">
+          <div class="rich-content">
+            <p data-lang-he="ביצוע עבודות גמר במגזר העסקי והמסחרי דורש ידע טכני מעמיק, בדיוק ללא פשרות ויכולת מוכחת בניהול פרויקטים מורכבים. לאורך השנים צברנו ניסיון עשיר בהקמה, שדרוג וחידוש של משרדים, שטחי מסחר ומבני ציבור-תוך שיתוף פעולה הדוק מול משרדי אדריכלים ומנהלי פרויקטים מהשורה הראשונה." data-lang-en="Delivering commercial fit-outs demands profound technical know-how, uncompromising accuracy, and proven execution capacity for complex projects. Over the years we have gained extensive experience erecting, upgrading, and transforming corporate offices, commercial areas, and public complexes in close cooperation with top architectural studios and leading project managers.">
+              ביצוע עבודות גמר במגזר העסקי והמסחרי דורש ידע טכני מעמיק, בדיוק ללא פשרות ויכולת מוכחת בניהול פרויקטים מורכבים. לאורך השנים צברנו ניסיון עשיר בהקמה, שדרוג וחידוש של משרדים, שטחי מסחר ומבני ציבור-תוך שיתוף פעולה הדוק מול משרדי אדריכלים ומנהלי פרויקטים מהשורה הראשונה.
+            </p>
+
+            <p data-lang-he="אנו מביאים לכל פרויקט שילוב של הנדסה מתקדמת, אסתטיקה גבוהה ודיוק טכני מוחלט. המומחיות שלנו באה לידי ביטוי ביכולת לתרגם תוכניות אדריכליות ומפרטים הנדסיים מורכבים לתוצאות מושלמות בשטח-ללא חריגת משאבים ותוך שמירה על הסטנדרטים הגבוהים ביותר." data-lang-en="We bring to every endeavor a refined synergy of progressive engineering, elevated aesthetics, and absolute technical discipline. Our core mastery translates complex architectural schematics and specifications into flawless execution on site without resource overruns.">
+              אנו מביאים לכל פרויקט שילוב של הנדסה מתקדמת, אסתטיקה גבוהה ודיוק טכני מוחלט. המומחיות שלנו באה לידי ביטוי ביכולת לתרגם תוכניות אדריכליות ומפרטים הנדסיים מורכבים לתוצאות מושלמות בשטח-ללא חריגת משאבים ותוך שמירה על הסטנדרטים הגבוהים ביותר.
+            </p>
+
+            <blockquote class="highlight-quote" data-lang-he="&quot;אנחנו כאן כדי להפוך את החזון האדריכלי שלכם אל המציאות בשטח&quot;" data-lang-en="&quot;We are here to transform your architectural vision into reality on the ground.&quot;">
+              "אנחנו כאן כדי להפוך את החזון האדריכלי שלכם אל המציאות בשטח"
+            </blockquote>
+          </div>
+
+          <div class="story-media">
+            <img src="assets/images/finishing-preview.jpg" alt="עבודות גמר יוקרתיות במשרדים" loading="lazy">
+          </div>
+        </div>
+
+        <!-- הערך המוסף שלנו (User's Exact Pillars) -->
+        <div class="section-header" style="margin-top: 3rem;">
+          <span class="eyebrow" data-lang-he="יתרונות מפתח" data-lang-en="CORE VALUES">יתרונות מפתח</span>
+          <h3 class="section-title" data-lang-he="הערך המוסף שלנו בעבודות גמר" data-lang-en="Our Value Added in Finishing Works">הערך המוסף שלנו</h3>
+        </div>
+
+        <div class="grid-3">
+          
+          <div class="feature-card">
+            <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h4 class="card-title" data-lang-he="מעטפת מלאה (One-Stop-Shop)" data-lang-en="One-Stop-Shop Envelope">מעטפת מלאה (One-Stop-Shop)</h4>
+            <p class="card-text" data-lang-he="אנו מתמחים בתכנון וביצוע של פרויקטים מורכבים תחת קורת גג אחת-אתם עובדים מול גורם אחד שאחראי על הכל, מה שמעניק לכם שקט תעשייתי וביטחון מלא לאורך כל הדרך." data-lang-en="Full turnkey delivery under one roof — working with a single accountable entity guarantees operational serenity and continuous confidence.">
+              אנו מתמחים בתכנון וביצוע של פרויקטים מורכבים תחת קורת גג אחת-אתם עובדים מול גורם אחד שאחראי על הכל, מה שמעניק לכם שקט תעשייתי וביטחון מלא לאורך כל הדרך.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <h4 class="card-title" data-lang-he="ניהול פרויקטים ומיומנות בשטח" data-lang-en="Field Management & Prowess">ניהול פרויקטים ומיומנות בשטח</h4>
+            <p class="card-text" data-lang-he="שליטה מלאה בשרשרת הביצוע, ניהול צוותים מקצועיים וסנכרון מדויק בין כלל מערכות התשתית והגמר." data-lang-en="Complete mastery over the execution chain, skilled permanent crews, and synchronized management across all MEP and architectural systems.">
+              שליטה מלאה בשרשרת הביצוע, ניהול צוותים מקצועיים וסנכרון מדויק בין כלל מערכות התשתית והגמר.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <h4 class="card-title" data-lang-he="סטנדרט מקצועי ללא פשרות" data-lang-en="Uncompromising Professional Standard">סטנדרט מקצועי ללא פשרות</h4>
+            <p class="card-text" data-lang-he="עבודה עפ&quot;י תווי התקן, תוך הקפדה על חומרי גמר איכותיים וגימור מושלם עד הפרט הקטן ביותר." data-lang-en="Adhering to strict engineering standards and utilizing premium materials with immaculate attention to detail.">
+              עבודה עפ"י תווי התקן, תוך הקפדה על חומרי גמר איכותיים וגימור מושלם עד הפרט הקטן ביותר.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+            <h4 class="card-title" data-lang-he="מענה הנדסי בזמן אמת" data-lang-en="Real-Time Engineering Agility">מענה הנדסי בזמן אמת</h4>
+            <p class="card-text" data-lang-he="ידע מקצועי וניסיון מעשי מאפשרים לנו לספק פתרונות טכניים מהירים, יעילים ומדויקים לכל אתגר תכנוני בשטח." data-lang-en="Technical agility and vast on-site experience allowing swift, precise answers to any structural or design constraint.">
+              ידע מקצועי וניסיון מעשי מאפשרים לנו לספק פתרונות טכניים מהירים, יעילים ומדויקים לכל אתגר תכנוני בשטח.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+            <h4 class="card-title" data-lang-he="עמידה בזמנים ובמסגרת התקציב" data-lang-en="Strict Schedule & Budget Compliance">עמידה בזמנים ובמסגרת התקציב</h4>
+            <p class="card-text" data-lang-he="התחייבות למסירת הפרויקט במועד המתוכנן וללא הפתעות בדרך." data-lang-en="Full contractual commitment to timely completion and zero budget discrepancies.">
+              התחייבות למסירת הפרויקט במועד המתוכנן וללא הפתעות בדרך.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+       2. עבודות תקשורת - USER'S EXACT TEXT
+       ============================================================ -->
+    <section class="section-py section-elevated" id="telecom" aria-label="עבודות תקשורת">
+      <div class="container">
+        
+        <div class="story-split" style="margin-bottom: 4rem;">
+          <div class="story-media">
+            <img src="assets/images/telecom-preview.jpg" alt="חדר בקרה ותשתיות תקשורת מתקדמות" loading="lazy">
+            <div class="story-badge-floating">
+              <div class="big-num">30</div>
+              <div class="label" data-lang-he="שנות ניסיון בהובלת יועץ מוסמך" data-lang-en="Years Certified Telecom Leadership">שנות ניסיון בהובלת יועץ מוסמך</div>
+            </div>
+          </div>
+
+          <div class="rich-content">
+            <span class="eyebrow">TELECOM & NETWORKS</span>
+            <h2 class="section-title" data-lang-he="עבודות תקשורת ומערכות מתח נמוך" data-lang-en="Telecom & Low Voltage Infrastructure">עבודות תקשורת ומערכות מתח נמוך</h2>
+            
+            <p data-lang-he="מחלקת התקשורת שלנו מספקת פתרונות מתקדמים וכוללים לתעשייה, לבנייני משרדים ולבנייני מגורים. המחלקה פועלת תחת ליווי מקצועי של יועץ תקשורת מוסמך מטעם מכללת בזק, בעל דיפלומה בהנדסאי חשמל (מתח נמוך), בקרה וטלקומניקציה, ובעל רישוי מטעם משרדי העבודה, החינוך והתקשורת לצד 30 שנות ניסיון עשיר בענף." data-lang-en="Our telecommunications division provides comprehensive, leading-edge infrastructure for industrial hubs, corporate office towers, and high-end residential complexes. Headed by an accredited telecom consultant certified by the Bezeq College, holding diplomas in low-voltage electrical engineering, control systems, and telecommunications, licensed by the ministries of Labor, Education, and Communications, backed by 30 years of illustrious industry experience.">
+              מחלקת התקשורת שלנו מספקת פתרונות מתקדמים וכוללים לתעשייה, לבנייני משרדים ולבנייני מגורים. המחלקה פועלת תחת ליווי מקצועי של יועץ תקשורת מוסמך מטעם מכללת בזק, בעל דיפלומה בהנדסאי חשמל (מתח נמוך), בקרה וטלקומניקציה, ובעל רישוי מטעם משרדי העבודה, החינוך והתקשורת לצד 30 שנות ניסיון עשיר בענף.
+            </p>
+          </div>
+        </div>
+
+        <!-- 5 Telecom Pillars (User's Exact Categories) -->
+        <div class="section-header">
+          <span class="eyebrow" data-lang-he="תחומי התמחות" data-lang-en="DOMAINS OF EXPERTISE">תחומי התמחות</span>
+          <h3 class="section-title" data-lang-he="השירותים והמערכות מתחלקים לתחומים הבאים:" data-lang-en="Services and Systems Architecture:">השירותים והמערכות מתחלקים לתחומים הבאים:</h3>
+        </div>
+
+        <div class="grid-3">
+          
+          <!-- Pillar 1 -->
+          <div class="feature-card">
+            <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg></div>
+            <h4 class="card-title" data-lang-he="תקשורת ורשתות" data-lang-en="Telecom & Networks">תקשורת ורשתות</h4>
+            <p class="card-text" data-lang-he="תקשורת אלחוטית (Wi-Fi, אנטנות ומגברי קליטה), סיבים אופטיים, עבודות כבילה וחיבוטים, ותשתיות חיצוניות." data-lang-en="Wireless connectivity (Wi-Fi, cellular antennas and signal boosters), structured fiber optics, cable routing and server racks, and external network backbone.">
+              תקשורת אלחוטית (Wi-Fi, אנטנות ומגברי קליטה), סיבים אופטיים, עבודות כבילה וחיבוטים, ותשתיות חיצוניות.
+            </p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="feature-card">
+            <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+            <h4 class="card-title" data-lang-he="אבטחה ומיגון" data-lang-en="Security & Protection">אבטחה ומיגון</h4>
+            <p class="card-text" data-lang-he="מצלמות אבטחה מתקדמות (כולל זיהוי פנים ואנליטיקה), מערכות אזעקה, חדרי בקרת אבטחה, וארונות וחדרי תקשורת." data-lang-en="Advanced CCTV with AI facial recognition and analytics, enterprise alarm systems, security command hubs, and dedicated telecom server rooms.">
+              מצלמות אבטחה מתקדמות (כולל זיהוי פנים ואנליטיקה), מערכות אזעקה, חדרי בקרת אבטחה, וארונות וחדרי תקשורת.
+            </p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="feature-card">
+            <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+            <h4 class="card-title" data-lang-he="בקרת כניסה ושערים" data-lang-en="Access Control & Gates">בקרת כניסה ושערים</h4>
+            <p class="card-text" data-lang-he="מערכות בקרת כניסה (מנוהלות ועצמאיות), ופתיחת שערים ומחסומים באמצעות אפליקציה וזיהוי מספר רכב (LPR)." data-lang-en="Standalone and centralized access control systems, license plate recognition (LPR), and automated gate/barrier apps.">
+              מערכות בקרת כניסה (מנוהלות ועצמאיות), ופתיחת שערים ומחסומים באמצעות אפליקציה וזיהוי מספר רכב.
+            </p>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="feature-card">
+            <div class="card-icon"><svg viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></div>
+            <h4 class="card-title" data-lang-he="מולטימדיה וכריזה" data-lang-en="Multimedia & PA Systems">מולטימדיה וכריזה</h4>
+            <p class="card-text" data-lang-he="מקרנים, מסכים, מערכות שמע, ומערכות הגברה וכריזה מתקדמות לחדרי ישיבות ולמבני ציבור." data-lang-en="High-definition projectors, commercial displays, acoustic engineering, and public address evacuation systems.">
+              מקרנים, מסכים, מערכות שמע, ומערכות הגברה וכריזה.
+            </p>
+          </div>
+
+          <!-- Pillar 5 -->
+          <div class="feature-card">
+            <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <h4 class="card-title" data-lang-he="אינטרקום" data-lang-en="Intercom Systems">אינטרקום</h4>
+            <p class="card-text" data-lang-he="מערכות אינטרקום חכמות לבתים פרטיים, למגדלי משרדים ולבניינים משותפים עם שילוב IP." data-lang-en="Smart IP intercom solutions for private residences, commercial towers, and multi-tenant residential complexes.">
+              מערכות אינטרקום לבתים פרטיים ולבניינים משותפים.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT SECTION
+         ============================================================ -->
+    <section class="contact-section" id="contact" aria-label="יצירת קשר">
+      <div class="container">
+        <div class="contact-grid">
+          
+          <div class="contact-info-panel">
+            <div>
+              <span class="eyebrow" data-lang-he="בואו נדבר" data-lang-en="GET IN TOUCH">בואו נדבר</span>
+              <h2 class="section-title" data-lang-he="מתכננים פרויקט גמר או תשתיות תקשורת?" data-lang-en="Planning a Fit-out or Telecom Project?">מתכננים פרויקט גמר או תשתיות תקשורת?</h2>
+              <p class="section-desc" data-lang-he="יועצי התקשורת ומנהלי ההנדסה שלנו יעניקו לכם מענה מקיף ומדויק לכל שלבי הפרויקט." data-lang-en="Our engineering and certified telecom teams provide comprehensive answers for every phase of execution.">
+                יועצי התקשורת ומנהלי ההנדסה שלנו יעניקו לכם מענה מקיף ומדויק לכל שלבי הפרויקט.
+              </p>
+            </div>
+
+            <div class="contact-card-box">
+              <div class="icon-wrap">
+                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="title" data-lang-he="טלפון ישיר" data-lang-en="Direct Call">טלפון ישיר</div>
+                <div class="value"><a href="tel:0500000000" dir="ltr">050-0000000</a></div>
+              </div>
+            </div>
+
+            <div class="contact-card-box">
+              <div class="icon-wrap">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="title" data-lang-he="דואר אלקטרוני" data-lang-en="Email Address">דואר אלקטרוני</div>
+                <div class="value"><a href="mailto:office@sensorix.co.il">office@sensorix.co.il</a></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-container">
+            <div class="form-header">
+              <h3 data-lang-he="ייעוץ ותיאום פגישה" data-lang-en="Consultation & Meeting">ייעוץ ותיאום פגישה</h3>
+              <p data-lang-he="השאירו פרטים ונחזור אליכם בהקדם." data-lang-en="Leave your details and we will reach out shortly.">השאירו פרטים ונחזור אליכם בהקדם.</p>
+            </div>
+
+            <div id="formStatusMsg" class="form-status-msg" role="alert"></div>
+
+            <form id="sensorixContactForm" novalidate>
+              <div class="hp-field" aria-hidden="true">
+                <input type="text" name="_hp_check" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="formName" class="form-label" data-i18n="form_name">שם מלא *</label>
+                  <input type="text" id="formName" name="name" class="form-input" required placeholder="ישראל ישראלי">
+                </div>
+                <div class="form-group">
+                  <label for="formPhone" class="form-label" data-i18n="form_phone">מספר טלפון *</label>
+                  <input type="tel" id="formPhone" name="phone" class="form-input" required placeholder="050-0000000">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="formEmail" class="form-label" data-i18n="form_email">כתובת אימייל *</label>
+                  <input type="email" id="formEmail" name="email" class="form-input" required placeholder="name@company.com">
+                </div>
+                <div class="form-group">
+                  <label for="formService" class="form-label" data-i18n="form_service">תחום השירות המבוקש</label>
+                  <select id="formService" name="service" class="form-select">
+                    <option value="עבודות גמר למשרדים ומסחר">עבודות גמר למשרדים ומסחר</option>
+                    <option value="תשתיות תקשורת ורשתות">תשתיות תקשורת ורשתות</option>
+                    <option value="בקרת כניסה ואבטחה">בקרת כניסה ואבטחה</option>
+                    <option value="מעטפת מלאה One-Stop-Shop">מעטפת מלאה One-Stop-Shop</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="formMessage" class="form-label" data-i18n="form_msg">פרטי הפרויקט *</label>
+                <textarea id="formMessage" name="message" class="form-textarea" required placeholder="מיקום הפרויקט, היקף, מפרט נדרש..."></textarea>
+              </div>
+
+              <div class="turnstile-box">
+                <div class="cf-turnstile" data-sitekey="0x4AAAAAAABBBBBBBBBBBBB" data-theme="dark"></div>
+              </div>
+
+              <button type="submit" id="formSubmitBtn" class="btn-submit">
+                <span data-i18n="form_submit">שליחת פנייה דיסקרטית</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-footer">
+            <img src="assets/images/new-logo-main2.png" alt="SENSORIX Logo" width="140" height="30">
+          </div>
+          <p class="footer-about" data-lang-he="סנסוריקס יזמות ונדל&quot;ן בע&quot;מ – מומחיות ודיוק הנדסי בביצוע עבודות גמר, יזמות והשבחת נכסים במגזר העסקי והמסחרי בפריסה ארצית." data-lang-en="Sensorix Real Estate & Development Ltd — Uncompromising engineering excellence in commercial finishes, development, and strategic asset optimization nationwide.">
+            סנסוריקס יזמות ונדל"ן בע"מ – מומחיות ודיוק הנדסי בביצוע עבודות גמר, יזמות והשבחת נכסים במגזר העסקי והמסחרי בפריסה ארצית.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-title" data-i18n="menu_title">ניווט מהיר</div>
+          <ul class="footer-links">
+            <li><a href="index.html" data-i18n="nav_home">דף הבית</a></li>
+            <li><a href="about.html" data-i18n="nav_about">אודות החברה</a></li>
+            <li><a href="projects.html" data-i18n="nav_projects">ביצוע וניהול פרויקטים</a></li>
+            <li><a href="yield.html" data-i18n="nav_yield">השבחת נכסים ומיקסום תשואות</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-title" data-lang-he="התמחויות" data-lang-en="Expertise">התמחויות</div>
+          <ul class="footer-links">
+            <li><a href="projects.html#finishes" data-i18n="nav_finishes">עבודות גמר פרימיום</a></li>
+            <li><a href="projects.html#telecom" data-i18n="nav_telecom">תשתיות תקשורת ורשתות</a></li>
+            <li><a href="yield.html" data-lang-he="Adaptive Reuse ושימוש מחדש" data-lang-en="Adaptive Reuse">Adaptive Reuse ושימוש מחדש</a></li>
+            <li><a href="about.html#vision" data-i18n="nav_about_vision">חזון ואסטרטגיה</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-title" data-i18n="btn_contact">יצירת קשר</div>
+          <ul class="footer-links">
+            <li><span data-lang-he="כתובת: תל אביב והמרכז" data-lang-en="HQ: Tel Aviv Business Hub">כתובת: תל אביב והמרכז</span></li>
+            <li><a href="tel:0500000000" dir="ltr">050-0000000</a></li>
+            <li><a href="mailto:office@sensorix.co.il">office@sensorix.co.il</a></li>
+            <li><a href="#contact" data-lang-he="תיאום פגישה מקצועית" data-lang-en="Schedule Consultation">תיאום פגישה מקצועית</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div data-i18n="footer_all_rights">כל הזכויות שמורות לחברת Sensorix יזמות ונדל"ן בע"מ © 2026</div>
+        <div class="footer-legal-links">
+          <a href="accessibility.html" data-i18n="footer_accessibility">הצהרת נגישות (ת״י 5568)</a>
+          <a href="privacy.html" data-i18n="footer_privacy">מדיניות פרטיות</a>
+          <a href="terms.html" data-i18n="footer_terms">תנאי שימוש</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

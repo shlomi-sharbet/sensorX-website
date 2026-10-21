@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>השבחת נכסים ומיקסום תשואות | SENSORIX – האסטרטגיה מאחורי הנדל"ן העסקי</title>
+  <meta name="description" content="סנסוריקס: השבחת נכסים מסחריים ומיקסום תשואות. Adaptive Reuse, קידום הליכים תכנוניים (תב״ע), עבודות גמר ומיתוג מחדש, ומעטפת מקצועית של 360 מעלות.">
+  <meta name="theme-color" content="#0A0B0D">
+  
+  <link rel="icon" type="image/png" href="assets/images/new-logo-main2.png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Cloudflare Turnstile -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body class="inner-page">
+  <a href="#main-content" class="skip-link">דלג לתוכן המרכזי</a>
+
+  <!-- ============================================================
+       TOP FLOATING HEADER (ALL PAGES)
+       ============================================================ -->
+  <header class="site-header" role="banner">
+    <div class="header-container">
+      
+      <!-- Right: Floating Hamburger Button -->
+      <button class="burger-trigger" id="burgerBtn" aria-label="פתח תפריט ניווט" aria-expanded="false" aria-controls="menuOverlay">
+        <div class="burger-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <span class="burger-label" data-i18n="menu_title">תפריט</span>
+      </button>
+
+      <!-- Center: Logo with Translucent White Glass Badge -->
+      <a href="index.html" class="logo-badge" aria-label="סנסוריקס - חזרה לדף הבית">
+        <img src="assets/images/new-logo-main2.png" alt="SENSORIX Logo" width="160" height="34">
+      </a>
+
+      <!-- Left: Language Switcher & Quick Contact -->
+      <div class="header-actions">
+        <div class="lang-switcher-pill" role="group" aria-label="בורר שפה">
+          <button class="lang-btn active" data-lang="he" aria-pressed="true">עב</button>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a href="#contact" class="header-call-btn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span data-i18n="btn_contact">צור קשר</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ============================================================
+       SPLIT-SCREEN OVERLAY HAMBURGER MENU (g-dlevy.co.il Style)
+       ============================================================ -->
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="menu-close-btn" id="menuCloseBtn" aria-label="סגור תפריט">
+      <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+      <span data-i18n="close_menu">סגור</span>
+    </button>
+
+    <div class="menu-right-panel">
+      <nav class="menu-nav-list" aria-label="תפריט אתר ראשי">
+        <div class="menu-item-row" data-preview-target="home">
+          <a href="index.html" class="menu-main-link" data-preview-target="home">
+            <span class="item-text" data-i18n="nav_home">דף הבית</span>
+            <span class="item-num">01</span>
+          </a>
+        </div>
+
+        <div class="menu-item-row" data-preview-target="about">
+          <a href="about.html" class="menu-main-link" data-preview-target="about">
+            <span class="item-text" data-i18n="nav_about">אודות</span>
+            <div style="display:flex; align-items:center;">
+              <span class="item-num">02</span>
+              <svg class="menu-chevron" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+          </a>
+          <div class="menu-sub-list">
+            <a href="about.html#story" class="sub-link" data-preview-target="about" data-i18n="nav_about_story">קצת עלינו</a>
+            <a href="about.html#vision" class="sub-link" data-preview-target="about" data-i18n="nav_about_vision">חזון ואסטרטגיה</a>
+          </div>
+        </div>
+
+        <div class="menu-item-row" data-preview-target="finishes">
+          <a href="projects.html" class="menu-main-link" data-preview-target="finishes">
+            <span class="item-text" data-i18n="nav_projects">ביצוע וניהול פרויקטים</span>
+            <div style="display:flex; align-items:center;">
+              <span class="item-num">03</span>
+              <svg class="menu-chevron" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+          </a>
+          <div class="menu-sub-list">
+            <a href="projects.html#telecom" class="sub-link" data-preview-target="telecom" data-i18n="nav_telecom">עבודות תקשורת</a>
+            <a href="projects.html#finishes" class="sub-link" data-preview-target="finishes" data-i18n="nav_finishes">עבודות גמר</a>
+          </div>
+        </div>
+
+        <div class="menu-item-row is-active" data-preview-target="yield">
+          <a href="yield.html" class="menu-main-link" data-preview-target="yield">
+            <span class="item-text" data-i18n="nav_yield">השבחת נכסים ומיקסום תשואות</span>
+            <span class="item-num">04</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="menu-panel-footer">
+        <div class="menu-contact-line">
+          <strong>טלפון ישיר:</strong>
+          <a href="tel:0500000000" dir="ltr">050-0000000</a>
+        </div>
+        <div class="menu-contact-line">
+          <strong>דוא״ל:</strong>
+          <a href="mailto:office@sensorix.co.il">office@sensorix.co.il</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-left-viewport">
+      <div class="preview-stage" id="previewStage">
+        
+        <div class="preview-slide" data-slide="home">
+          <img src="assets/images/about-preview.jpg" alt="דף הבית" loading="lazy">
+          <div class="preview-overlay-info">
+            <span class="preview-badge">SENSORIX</span>
+            <div class="preview-title">דף הבית</div>
+            <div class="preview-desc">עבודות גמר יוקרתיות, השבחת נכסים מסחריים ותשתיות תקשורת.</div>
+          </div>
+        </div>
+
+        <div class="preview-slide" data-slide="about">
+          <img src="assets/images/about-preview.jpg" alt="אודות" loading="lazy">
+          <div class="preview-overlay-info">
+            <span class="preview-badge">OUR STORY</span>
+            <div class="preview-title">אודות סנסוריקס יזמות ונדל"ן</div>
+            <div class="preview-desc">מעל שני עשורים של ניסיון עשיר, יחס אישי ומעטפת הנדסית שלמה.</div>
+          </div>
+        </div>
+
+        <div class="preview-slide" data-slide="finishes">
+          <img src="assets/images/finishing-preview.jpg" alt="עבודות גמר" loading="lazy">
+          <div class="preview-overlay-info">
+            <span class="preview-badge">PREMIUM FINISHES</span>
+            <div class="preview-title">עבודות גמר למגזר העסקי והמסחרי</div>
+            <div class="preview-desc">תרגום תוכניות אדריכליות ומפרטים מורכבים לתוצאות מושלמות.</div>
+          </div>
+        </div>
+
+        <div class="preview-slide" data-slide="telecom">
+          <img src="assets/images/telecom-preview.jpg" alt="עבודות תקשורת" loading="lazy">
+          <div class="preview-overlay-info">
+            <span class="preview-badge">TELECOM & NETWORKS</span>
+            <div class="preview-title">עבודות תקשורת ומערכות מתח נמוך</div>
+            <div class="preview-desc">30 שנות ניסיון בהובלת יועץ תקשורת מוסמך.</div>
+          </div>
+        </div>
+
+        <div class="preview-slide is-active" data-slide="yield">
+          <img src="assets/images/yield-preview.jpg" alt="השבחת נכסים ומיקסום תשואות" loading="lazy">
+          <div class="preview-overlay-info">
+            <span class="preview-badge">ASSET ENHANCEMENT</span>
+            <div class="preview-title">השבחת נכסים ומיקסום תשואות</div>
+            <div class="preview-desc">Adaptive Reuse והפיכת נכסים למרכזים מודרניים שוקקים ורווחיים.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="preview-default-note">
+        <span class="dot"></span>
+        <span data-i18n="preview_hint">רחף מעל האפשרויות לצפייה בתמונה המייצגת</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PAGE HERO (YIELD)
+       ============================================================ -->
+  <main id="main-content">
+    <section class="page-hero" aria-label="השבחת נכסים ומיקסום תשואות">
+      <img src="assets/images/yield-preview.jpg" alt="השבחת נכסים מסחריים ומיקסום תשואות" class="page-hero-bg">
+      <div class="page-hero-gradient" aria-hidden="true"></div>
+      <div class="container page-hero-content">
+        <span class="page-hero-category">MAXIMIZING REAL ESTATE YIELDS</span>
+        <h1 class="page-hero-title" data-lang-he="השבחת נכסים ומיקסום תשואות" data-lang-en="Asset Enhancement & Maximizing Yields">השבחת נכסים ומיקסום תשואות</h1>
+        <p class="page-hero-subtitle" data-lang-he="האסטרטגיה מאחורי הנדל&quot;ן העסקי: איתור, תכנון ומימוש הפוטנציאל." data-lang-en="The Strategy Behind Commercial Real Estate: Sourcing, Planning, and Value Realization.">
+          האסטרטגיה מאחורי הנדל"ן העסקי: איתור, תכנון ומימוש הפוטנציאל.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       CONTENT SECTION - USER'S EXACT TEXT
+       ============================================================ -->
+    <section class="section-py section-dark" aria-label="תוכן השבחת נכסים">
+      <div class="container">
+        
+        <div class="story-split" style="margin-bottom: 4rem;">
+          <div class="rich-content">
+            <span class="eyebrow">COMMERCIAL REAL ESTATE</span>
+            <h2 class="section-title" data-lang-he="האסטרטגיה מאחורי הנדל&quot;ן העסקי" data-lang-en="The Strategy Behind Commercial Real Estate">האסטרטגיה מאחורי הנדל"ן העסקי</h2>
+            
+            <p data-lang-he="בשנים האחרונות, נדל&quot;ן מניב הפך לאחד מאפיקי ההשקעה המבוקשים והיציבים ביותר בשוק הישראלי. השילוב בין נכסים מסחריים איכותיים, תכנון אסטרטגי קפדני וניהול מקצועי, מאפשר לחברתנו ליצור תזרים הכנסה שוטף ויציב לאורך זמן-לצד מימוש פוטנציאל השבחה משמעותי בכל פרויקט שאנו מובילים." data-lang-en="In recent years, income-producing real estate has become one of the most stable and sought-after investment channels in Israel. Uniting quality commercial assets, rigorous strategic planning, and seasoned management enables our firm to generate steady cash flow over time alongside substantial capital appreciation in every venture we lead.">
+              בשנים האחרונות, נדל"ן מניב הפך לאחד מאפיקי ההשקעה המבוקשים והיציבים ביותר בשוק הישראלי. השילוב בין נכסים מסחריים איכותיים, תכנון אסטרטגי קפדני וניהול מקצועי, מאפשר לחברתנו ליצור תזרים הכנסה שוטף ויציב לאורך זמן-לצד מימוש פוטנציאל השבחה משמעותי בכל פרויקט שאנו מובילים.
+            </p>
+
+            <p data-lang-he="חברתנו מתמחה בהשבחת נכסים ועבודות גמר למגזר העסקי והמסחרי, ומביאה עמה סטנדרטים בינלאומיים, ניסיון עשיר וראייה אינטגרטיבית ורב -תחומית- כגורם היוזם, המתכנן והמבצע של הפעילות מקצה לקצה." data-lang-en="Our company specializes in asset enhancement and high-end fit-outs for the business and commercial sector, introducing international benchmarks, deep acumen, and an integrative multidisciplinary perspective as the initiator, designer, and general contractor end-to-end.">
+              חברתנו מתמחה בהשבחת נכסים ועבודות גמר למגזר העסקי והמסחרי, ומביאה עמה סטנדרטים בינלאומיים, ניסיון עשיר וראייה אינטגרטיבית ורב -תחומית- כגורם היוזם, המתכנן והמבצע של הפעילות מקצה לקצה.
+            </p>
+          </div>
+
+          <div class="story-media">
+            <img src="assets/images/yield-preview.jpg" alt="מתחם מסחרי שעבר השבחה וחידוש" loading="lazy">
+          </div>
+        </div>
+
+        <!-- המודל העסקי: איתור, תכנון ומימוש הפוטנציאל (User's Exact Text) -->
+        <div class="feature-card" style="margin-bottom: 4rem; padding: 3rem;">
+          <span class="eyebrow">BUSINESS MODEL</span>
+          <h3 class="section-title" data-lang-he="המודל העסקי: איתור, תכנון ומימוש הפוטנציאל" data-lang-en="Business Model: Sourcing, Planning & Value Realization">
+            המודל העסקי: איתור, תכנון ומימוש הפוטנציאל
+          </h3>
+          <p class="card-text" style="font-size: 1.1rem; line-height: 1.8; color: var(--clr-gray-light);" data-lang-he="החוזקה המרכזית שלנו טמונה בזיהוי הזדמנויות ייחודיות ובחשיפת פוטנציאל מוסף בנכסים בעלי מורכבות תכנונית או תפעולית. הפעילות של החברה חולשת על כלל מגזרי הנדל&quot;ן העסקי בישראל: מסחר, תעשיה, משרדים ולוגיסטיקה." data-lang-en="Our principal strength lies in uncovering unique opportunities and unlocking hidden value in assets with complex zoning, structural, or operational hurdles. Our scope encompasses all commercial asset classes in Israel: retail, industry, corporate offices, and logistics.">
+            החוזקה המרכזית שלנו טמונה בזיהוי הזדמנויות ייחודיות ובחשיפת פוטנציאל מוסף בנכסים בעלי מורכבות תכנונית או תפעולית. הפעילות של החברה חולשת על כלל מגזרי הנדל"ן העסקי בישראל: מסחר, תעשיה, משרדים ולוגיסטיקה.
+          </p>
+        </div>
+
+        <!-- ליבת הפעילות והתמחות החברה (User's 4 Core Pillars) -->
+        <div class="section-header">
+          <span class="eyebrow" data-lang-he="תחומי התמחות" data-lang-en="SPECIALIZED DOMAINS">תחומי התמחות</span>
+          <h3 class="section-title" data-lang-he="ליבת הפעילות והתמחות החברה" data-lang-en="Core Activities & Specializations">ליבת הפעילות והתמחות החברה</h3>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 4.5rem;">
+          
+          <div class="feature-card">
+            <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+            <h4 class="card-title" data-lang-he="שימוש מחדש (Adaptive Reuse)" data-lang-en="Adaptive Reuse">שימוש מחדש (Adaptive Reuse)</h4>
+            <p class="card-text" data-lang-he="הפיכת &quot;פילים לבנים&quot; ונכסים לא מנוצלים למרכזים רווחיים, מודרניים ושוקקים." data-lang-en="Transforming dormant white elephants and underutilized spaces into vibrant, modern, high-yielding commercial centers.">
+              הפיכת "פילים לבנים" ונכסים לא מנוצלים למרכזים רווחיים, מודרניים ושוקקים.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+            <h4 class="card-title" data-lang-he="קידום הליכים תכנוניים" data-lang-en="Statutory & Zoning Advancements">קידום הליכים תכנוניים</h4>
+            <p class="card-text" data-lang-he="הובלת תוכניות בניין עיר (תב&quot;ע), שינויי ייעוד קרקע, הגדלת זכויות בנייה והסדרת שימושים חורגים." data-lang-en="Steering municipal zoning plans (TABA), land rezoning, expansion of building rights, and resolving non-conforming permits.">
+              הובלת תוכניות בניין עיר (תב"ע), שינויי ייעוד קרקע, הגדלת זכויות בנייה והסדרת שימושים חורגים.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-icon"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+            <h4 class="card-title" data-lang-he="שיפור ביצועים תפעוליים" data-lang-en="Operational Performance Enhancement">שיפור ביצועים תפעוליים</h4>
+            <p class="card-text" data-lang-he="שדרוג מתמיד של המתחמים והתאמתם לסטנדרטים המודרניים והיוקרתיים ביותר בשוק." data-lang-en="Ongoing asset optimization aligning facilities with modern prestige benchmarks and high-yield tenant expectations.">
+              שדרוג מתמיד של המתחמים והתאמתם לסטנדרטים המודרניים והיוקרתיים ביותר בשוק.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+            <h4 class="card-title" data-lang-he="עבודות גמר ומיתוג מחדש" data-lang-en="Turnkey Finishes & Rebranding">עבודות גמר ומיתוג מחדש</h4>
+            <p class="card-text" data-lang-he="מענה הנדסי ואסתטי שלם, המבוצע מזווית ראייה יזמית ומעלה באופן מידי את ערך הנכס ואת האטרקטיביות שלו לשוכרי פרימיום." data-lang-en="Comprehensive architectural and branding repositioning driven by developer mindset, immediately surging asset value and prestige appeal.">
+              מענה הנדסי ואסתטי שלם, המבוצע מזווית ראייה יזמית ומעלה באופן מידי את ערך הנכס ואת האטרקטיביות שלו לשוכרי פרימיום.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- מתודולוגיית העבודה: דינמיות וגמישות מחשבתית (User's Exact Text) -->
+        <div class="story-split" style="margin-bottom: 4rem;">
+          <div class="rich-content">
+            <span class="eyebrow">METHODOLOGY</span>
+            <h3 class="section-title" data-lang-he="מתודולוגיית העבודה: דינמיות וגמישות מחשבתית" data-lang-en="Work Methodology: Dynamism & Agility">
+              מתודולוגיית העבודה: דינמיות וגמישות מחשבתית
+            </h3>
+            
+            <p data-lang-he="שיטת העבודה של החברה אינה נצמדת לתבניות קבועות-היא דינמית ונגזרת בראש ובראשונה מהמטרה העסקית של הפרויקט." data-lang-en="Our operating methodology breaks free of rigid templates — it is nimble and directly dictated by the specific commercial objective of the asset.">
+              שיטת העבודה של החברה אינה נצמדת לתבניות קבועות-היא דינמית ונגזרת בראש ובראשונה מהמטרה העסקית של הפרויקט.
+            </p>
+
+            <blockquote class="highlight-quote" data-lang-he="&quot;העיקרון המוביל אותנו: הסרת חסמים וקידום העסקה והפרויקט בדרך היעילה, המהירה והבטוחה ביותר תוך שמירה על המוניטין של החברה ושל השותפים לדרך.&quot;" data-lang-en="&quot;Our guiding principle: Eliminating bottlenecks and advancing the deal and project through the most efficient, swift, and risk-managed path while safeguarding our reputation and partners.&quot;">
+              "העיקרון המוביל אותנו: הסרת חסמים וקידום העסקה והפרויקט בדרך היעילה, המהירה והבטוחה ביותר תוך שמירה על המוניטין של החברה ושל השותפים לדרך."
+            </blockquote>
+
+            <p data-lang-he="בשלבי התכנון והאנליזה: צוותי החברה מבצעים ניתוחי עומק מקיפים, הכוללים בדיקות תכנוניות, בדיקות היתכנות כלכליות ושיווקיות, סקרי שוק ושומות מדויקות." data-lang-en="At the analysis & planning stage: Thorough diligence encompassing zoning audits, financial feasibility models, market surveys, and accurate appraisals.">
+              <strong>בשלבי התכנון והאנליזה:</strong> צוותי החברה מבצעים ניתוחי עומק מקיפים, הכוללים בדיקות תכנוניות, בדיקות היתכנות כלכליות ושיווקיות, סקרי שוק ושומות מדויקות.
+            </p>
+
+            <p data-lang-he="בשלבי הביצוע והשטח: אנו פועלים בנחישות, מייצרים פתרונות יצירתיים בזמן אמת ומקדמים תהליכים במהירות כדי לממש חלונות הזדמנות עסקיים." data-lang-en="At the execution stage: Decisive on-site action, creating real-time agile solutions to capitalize on fleeting market windows.">
+              <strong>בשלבי הביצוע והשטח:</strong> אנו פועלים בנחישות, מייצרים פתרונות יצירתיים בזמן אמת ומקדמים תהליכים במהירות כדי לממש חלונות הזדמנות עסקיים.
+            </p>
+          </div>
+
+          <div class="rich-content" style="background: var(--clr-black-card); padding: 2.5rem; border-radius: var(--radius-lg); border: 1px solid var(--clr-gray-border);">
+            <span class="eyebrow">ORGANIZATIONAL STRUCTURE</span>
+            <h3 class="section-title" style="font-size: 1.8rem;" data-lang-he="המבנה הארגוני: מעטפת מקצועית של 360 מעלות" data-lang-en="Organizational Structure: 360° Envelope">
+              המבנה הארגוני: מעטפת מקצועית של 360 מעלות
+            </h3>
+            <p data-lang-he="כדי להעניק לכל פרויקט את הערך המרבי, החברה פועלת באמצעות חטיבות מתמחות המעניקות מעטפת פנימית מלאה. כחלק מאסטרטגיית הצמיחה והפיתוח שלנו, אנו מנהלים שיתופי פעולה אסטרטגיים קבועים עם חברות יזמיות מובילות, קרנות ומשקיעים." data-lang-en="To inject maximum value into every project, the firm operates specialized internal divisions delivering full coverage. As part of our growth strategy, we maintain continuous partnerships with premier developers, funds, and institutional investors.">
+              כדי להעניק לכל פרויקט את הערך המרבי, החברה פועלת באמצעות חטיבות מתמחות המעניקות מעטפת פנימית מלאה. כחלק מאסטרטגיית הצמיחה והפיתוח שלנו, אנו מנהלים שיתופי פעולה אסטרטגיים קבועים עם חברות יזמיות מובילות, קרנות ומשקיעים.
+            </p>
+            <p data-lang-he="עבורנו, כל פרויקט הוא הזדמנות ליצירת ערך. עם גב מקצועי איתן, ראייה ארוכת טווח ומצוינות שנבנתה לאורך זמן, אנו יודעים בדיוק כיצד לצלוח את האתגרים הכרוכים בניהול, תכנון והשבחת נכסים בישראל." data-lang-en="For us, every venture is an avenue to unlock enduring value. Backed by solid professional strength and long-term vision, we navigate the complex landscape of asset optimization with confidence.">
+              עבורנו, כל פרויקט הוא הזדמנות ליצירת ערך. עם גב מקצועי איתן, ראייה ארוכת טווח ומצוינות שנבנתה לאורך זמן, אנו יודעים בדיוק כיצד לצלוח את האתגרים הכרוכים בניהול, תכנון והשבחת נכסים בישראל.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CALL TO PARTNERSHIP (USER'S EXACT CLOSING)
+         ============================================================ -->
+    <section class="contact-section" id="contact" aria-label="יצירת קשר ושיתופי פעולה">
+      <div class="container">
+        <div class="contact-grid">
+          
+          <div class="contact-info-panel">
+            <div>
+              <span class="eyebrow" data-lang-he="הזדמנויות עסקיות" data-lang-en="STRATEGIC PARTNERSHIP">הזדמנויות עסקיות</span>
+              <h2 class="section-title" data-lang-he="מזהים נכס בעל פוטנציאל לא ממומש? מחפשים שותף אסטרטגי?" data-lang-en="Identified an Unrealized Asset? Looking for a Strategic Partner?">
+                מזהים נכס בעל פוטנציאל לא ממומש? מחפשים שותף אסטרטגי?
+              </h2>
+              <p class="section-desc" data-lang-he="חברתנו מביעה עניין מתמיד בקידום הזדמנויות חדשות ובשיתופי פעולה עסקיים. צרו עמנו קשר לבחינת יוזמות משותפות." data-lang-en="We continuously express interest in advancing new opportunities and business collaborations. Contact us to explore joint initiatives.">
+                חברתנו מביעה עניין מתמיד בקידום הזדמנויות חדשות ובשיתופי פעולה עסקיים. צרו עמנו קשר לבחינת יוזמות משותפות.
+              </p>
+            </div>
+
+            <div class="contact-card-box">
+              <div class="icon-wrap">
+                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="title" data-lang-he="פנייה ישירה" data-lang-en="Direct Call">פנייה ישירה</div>
+                <div class="value"><a href="tel:0500000000" dir="ltr">050-0000000</a></div>
+              </div>
+            </div>
+
+            <div class="contact-card-box">
+              <div class="icon-wrap">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="title" data-lang-he="דואר אלקטרוני" data-lang-en="Email Address">דואר אלקטרוני</div>
+                <div class="value"><a href="mailto:office@sensorix.co.il">office@sensorix.co.il</a></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-container">
+            <div class="form-header">
+              <h3 data-lang-he="בחינת שיתוף פעולה והשבחה" data-lang-en="Partnership Inquiry">בחינת שיתוף פעולה והשבחה</h3>
+              <p data-lang-he="השאירו פרטים דיסקרטיים ונשוחח בהקדם." data-lang-en="Leave confidential details and an executive will follow up.">השאירו פרטים דיסקרטיים ונשוחח בהקדם.</p>
+            </div>
+
+            <div id="formStatusMsg" class="form-status-msg" role="alert"></div>
+
+            <form id="sensorixContactForm" novalidate>
+              <div class="hp-field" aria-hidden="true">
+                <input type="text" name="_hp_check" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="formName" class="form-label" data-i18n="form_name">שם מלא *</label>
+                  <input type="text" id="formName" name="name" class="form-input" required placeholder="ישראל ישראלי">
+                </div>
+                <div class="form-group">
+                  <label for="formPhone" class="form-label" data-i18n="form_phone">מספר טלפון *</label>
+                  <input type="tel" id="formPhone" name="phone" class="form-input" required placeholder="050-0000000">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="formEmail" class="form-label" data-i18n="form_email">כתובת אימייל *</label>
+                  <input type="email" id="formEmail" name="email" class="form-input" required placeholder="name@company.com">
+                </div>
+                <div class="form-group">
+                  <label for="formService" class="form-label" data-i18n="form_service">סוג ההתקשרות המבוקש</label>
+                  <select id="formService" name="service" class="form-select">
+                    <option value="השבחת נכס מסחרי קיים">השבחת נכס מסחרי קיים</option>
+                    <option value="שימוש מחדש Adaptive Reuse">שימוש מחדש Adaptive Reuse</option>
+                    <option value="קידום הליכים תכנוניים ותב״ע">קידום הליכים תכנוניים ותב״ע</option>
+                    <option value="שותפות אסטרטגית ויזמות נדל״ן">שותפות אסטרטגית ויזמות נדל״ן</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="formMessage" class="form-label" data-i18n="form_msg">פרטי הנכס או היוזמה *</label>
+                <textarea id="formMessage" name="message" class="form-textarea" required placeholder="מיקום הנכס, ייעוד נוכחי, שטח במ&quot;ר ואופי השותפות המבוקשת..."></textarea>
+              </div>
+
+              <div class="turnstile-box">
+                <div class="cf-turnstile" data-sitekey="0x4AAAAAAABBBBBBBBBBBBB" data-theme="dark"></div>
+              </div>
+
+              <button type="submit" id="formSubmitBtn" class="btn-submit">
+                <span data-i18n="form_submit">שליחת פנייה דיסקרטית</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-footer">
+            <img src="assets/images/new-logo-main2.png" alt="SENSORIX Logo" width="140" height="30">
+          </div>
+          <p class="footer-about" data-lang-he="סנסוריקס יזמות ונדל&quot;ן בע&quot;מ – מומחיות ודיוק הנדסי בביצוע עבודות גמר, יזמות והשבחת נכסים במגזר העסקי והמסחרי בפריסה ארצית." data-lang-en="Sensorix Real Estate & Development Ltd — Uncompromising engineering excellence in commercial finishes, development, and strategic asset optimization nationwide.">
+            סנסוריקס יזמות ונדל"ן בע"מ – מומחיות ודיוק הנדסי בביצוע עבודות גמר, יזמות והשבחת נכסים במגזר העסקי והמסחרי בפריסה ארצית.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-title" data-i18n="menu_title">ניווט מהיר</div>
+          <ul class="footer-links">
+            <li><a href="index.html" data-i18n="nav_home">דף הבית</a></li>
+            <li><a href="about.html" data-i18n="nav_about">אודות החברה</a></li>
+            <li><a href="projects.html" data-i18n="nav_projects">ביצוע וניהול פרויקטים</a></li>
+            <li><a href="yield.html" data-i18n="nav_yield">השבחת נכסים ומיקסום תשואות</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-title" data-lang-he="התמחויות" data-lang-en="Expertise">התמחויות</div>
+          <ul class="footer-links">
+            <li><a href="projects.html#finishes" data-i18n="nav_finishes">עבודות גמר פרימיום</a></li>
+            <li><a href="projects.html#telecom" data-i18n="nav_telecom">תשתיות תקשורת ורשתות</a></li>
+            <li><a href="yield.html" data-lang-he="Adaptive Reuse ושימוש מחדש" data-lang-en="Adaptive Reuse">Adaptive Reuse ושימוש מחדש</a></li>
+            <li><a href="about.html#vision" data-i18n="nav_about_vision">חזון ואסטרטגיה</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-title" data-i18n="btn_contact">יצירת קשר</div>
+          <ul class="footer-links">
+            <li><span data-lang-he="כתובת: תל אביב והמרכז" data-lang-en="HQ: Tel Aviv Business Hub">כתובת: תל אביב והמרכז</span></li>
+            <li><a href="tel:0500000000" dir="ltr">050-0000000</a></li>
+            <li><a href="mailto:office@sensorix.co.il">office@sensorix.co.il</a></li>
+            <li><a href="#contact" data-lang-he="תיאום פגישה מקצועית" data-lang-en="Schedule Consultation">תיאום פגישה מקצועית</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div data-i18n="footer_all_rights">כל הזכויות שמורות לחברת Sensorix יזמות ונדל"ן בע"מ © 2026</div>
+        <div class="footer-legal-links">
+          <a href="accessibility.html" data-i18n="footer_accessibility">הצהרת נגישות (ת״י 5568)</a>
+          <a href="privacy.html" data-i18n="footer_privacy">מדיניות פרטיות</a>
+          <a href="terms.html" data-i18n="footer_terms">תנאי שימוש</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
