@@ -167,56 +167,58 @@ ul, ol {
   top: 0;
   left: 0;
   right: 0;
+  width: 100%;
   height: var(--header-height);
   z-index: 9000;
   display: flex;
   align-items: center;
-  transition: background-color var(--transition-smooth), transform var(--transition-smooth), backdrop-filter var(--transition-smooth);
-  pointer-events: none; /* children re-enable pointer-events */
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+  transition: background-color var(--transition-smooth), transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.site-header.scrolled {
+  background: #FFFFFF;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.09);
 }
 
 .header-container {
   width: 100%;
-  max-width: min(1500px, 100% - 2.5rem);
+  max-width: min(1500px, 100% - 3rem);
   margin-inline: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-block: 0.75rem;
+  padding-block: 0.5rem;
 }
 
-/* Re-enable pointer events for interactive elements */
-.site-header * {
-  pointer-events: auto;
-}
-
-/* --- Floating Hamburger Button (Top Right in RTL) --- */
+/* --- Hamburger Button (Top Right in RTL, G.D LEVY style) --- */
 .burger-trigger {
   display: inline-flex;
   align-items: center;
   gap: 0.85rem;
-  padding: 0.65rem 1.25rem;
-  background: var(--glass-white-bg);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid var(--glass-white-border);
+  padding: 0.55rem 1.15rem;
+  background: transparent;
+  border: 1px solid transparent;
   border-radius: var(--radius-pill);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
   color: var(--clr-black);
   font-weight: 700;
   font-size: 0.925rem;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+  cursor: pointer;
+  transition: all var(--transition-fast);
 }
 
 .burger-trigger:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 26px rgba(255, 122, 24, 0.25);
-  background: #FFFFFF;
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--clr-orange-primary);
 }
 
 .burger-icon {
   width: 22px;
-  height: 16px;
+  height: 15px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -229,68 +231,64 @@ ul, ol {
   width: 100%;
   background-color: var(--clr-black);
   border-radius: 2px;
-  transition: transform var(--transition-smooth), opacity var(--transition-fast), width var(--transition-fast);
+  transition: transform var(--transition-smooth), opacity var(--transition-fast), width var(--transition-fast), background-color var(--transition-fast);
 }
 
 .burger-icon span:nth-child(2) {
   width: 75%;
 }
 
-.burger-trigger:hover .burger-icon span:nth-child(2) {
-  width: 100%;
+.burger-trigger:hover .burger-icon span {
   background-color: var(--clr-orange-primary);
 }
 
-/* --- Center: Logo with Translucent White Background --- */
+.burger-trigger:hover .burger-icon span:nth-child(2) {
+  width: 100%;
+}
+
+/* --- Center: SENSORIX Logo on White Background --- */
 .logo-badge {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem 1.6rem;
-  background: var(--glass-white-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--glass-white-border);
-  border-radius: var(--radius-pill);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.14);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  transition: transform var(--transition-fast);
 }
 
 .logo-badge:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(255, 122, 24, 0.25);
+  box-shadow: none;
 }
 
 .logo-badge img {
-  height: 32px;
+  height: 38px;
   width: auto;
+  max-width: 190px;
   object-fit: contain;
   display: block;
-  /* Since new-logo-main2.png has a dark backdrop inside the graphic, we keep it clean or stylized */
-  border-radius: 4px;
 }
 
 /* --- Left Side: Language Switcher & Call Button --- */
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.85rem;
 }
 
 .lang-switcher-pill {
   display: flex;
   align-items: center;
-  background: var(--glass-white-bg);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid var(--glass-white-border);
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: var(--radius-pill);
   padding: 3px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 
 .lang-btn {
-  padding: 0.4rem 0.85rem;
+  padding: 0.35rem 0.8rem;
   font-size: 0.825rem;
   font-weight: 700;
   color: var(--clr-black);
@@ -300,22 +298,32 @@ ul, ol {
 
 .lang-btn.active {
   background: var(--clr-orange-primary);
-  color: var(--clr-white);
-  box-shadow: 0 2px 10px var(--clr-orange-glow);
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px var(--clr-orange-glow);
+}
+
+.lang-btn:hover:not(.active) {
+  color: var(--clr-orange-primary);
 }
 
 .header-call-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.6rem 1.15rem;
+  padding: 0.55rem 1.25rem;
   background: var(--clr-orange-primary);
   color: var(--clr-white);
   font-weight: 700;
   font-size: 0.875rem;
   border-radius: var(--radius-pill);
-  box-shadow: 0 4px 18px var(--clr-orange-glow);
-  transition: transform var(--transition-fast), background-color var(--transition-fast);
+  box-shadow: 0 4px 16px var(--clr-orange-glow);
+  transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.header-call-btn:hover {
+  background: var(--clr-orange-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px var(--clr-orange-glow);
 }
 
 .header-call-btn:hover {
