@@ -2,13 +2,10 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "sensorx-website",
   "compatibility_date": "2026-10-12",
-  "assets": {
-    "directory": "."
-  },
+  "pages_build_output_dir": ".",
   "send_email": [
     {
       "name": "EMAIL"
     }
-  ],
-  "previews": {}
+  ]
 }
