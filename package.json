@@ -1,0 +1,13 @@
+{
+  "name": "sensorx-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SENSORIX Corporate Showcase Website",
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^3.80.0"
+  }
+}
