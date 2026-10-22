@@ -379,4 +379,60 @@
     });
   }
 
+  // ----------------------------------------------------
+  // 6. ARCHITECTURAL SHOWCASE FILTER & SCROLL REVEALS (dev_16)
+  // ----------------------------------------------------
+  const filterTabs = document.querySelectorAll('.filter-tab');
+  const projectCards = document.querySelectorAll('.arch-project-card');
+
+  if (filterTabs.length && projectCards.length) {
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', function () {
+        const filter = this.getAttribute('data-filter');
+
+        filterTabs.forEach(t => {
+          t.classList.remove('is-active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        this.classList.add('is-active');
+        this.setAttribute('aria-selected', 'true');
+
+        projectCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'flex';
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(12px)';
+            setTimeout(() => {
+              card.style.transition = 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 30);
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  // Natural scroll fade-in reveals (No scroll-jacking)
+  if ('IntersectionObserver' in window) {
+    const revealTargets = document.querySelectorAll('.showcase-card, .arch-project-card, .process-card, .feature-card, .story-split');
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealTargets.forEach(el => observer.observe(el));
+  }
+
 })();
+
